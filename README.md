@@ -7,7 +7,7 @@
         * Control Signal Table
     * Interface of Microprocessor components
 * Example test set: Input/Output
-* Test Environment
+* [Test Environment](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#test-environment)
 * [Project Grading](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#project-grading)
 
 ## Project Overview
