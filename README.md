@@ -8,10 +8,18 @@
     * [Interface of Microprocessor components](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#interface-of-microprocessor-components)
 * [Example test set: Input/Output](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#example-test-set-inputoutput)
 * [Test Environment](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#test-environment)
-* [Project Grading](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#project-grading)
 
 ## Project Overview
+* Implementation of a simple Microprocessor in verilog for FPGA implementation consisting of an ALU, a control unit, a system memory, registers, and so on.
+* An on-board 50MHz clock oscillator is used to create 1Hz clock for the microprocessor.
+* Specifications:
+   * 8-bit Microprocessor
+   * Instruction size : 8-bit
+   * Type of instructions : 4 (add, load, store, jump)
+   * Register size : 8-bit
+   * Number of registers : 4
 ## Microprocessor Design
+
 ### Data Path
 ### Instruction Set Architecture
 #### Formats of the entire instruction set
@@ -19,4 +27,3 @@
 ### Interface of Microprocessor components
 ## Example test set: Input/Output
 ## Test Environment
-## Project Grading
