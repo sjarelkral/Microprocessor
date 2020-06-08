@@ -18,6 +18,11 @@
    * Type of instructions : 4 (add, load, store, jump)
    * Register size : 8-bit
    * Number of registers : 4
+ * Input : Instruction codes from external memory (IMEM Module)
+   * IMEM implemented on a separate FPGA chip and connected using an 8-bit bus.
+ * Output: Current value of Reg Write Data, extra optional features e.g 1Hz clock tick LED.
+   * **Hexadecimal** on 7-segment displays
+ 
 ## Microprocessor Design
 
 ### Data Path
