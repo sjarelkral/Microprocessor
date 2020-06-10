@@ -10,7 +10,7 @@
 * [Test Environment](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#test-environment)
 
 ## Project Overview
-* Implementation of a simple Microprocessor in verilog for FPGA implementation consisting of an ALU, a control unit, a system memory, registers, and so on.
+* Implementation of a **simple Microprocessor** in verilog for **FPGA** implementation consisting of an *ALU, a control unit, a system memory, registers*, and so on.
 * An on-board 50MHz clock oscillator is used to create 1Hz clock for the microprocessor.
 * Specifications:
    * 8-bit Microprocessor
