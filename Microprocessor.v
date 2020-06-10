@@ -59,6 +59,7 @@ module Microprocessor(
 	 //Registers
 	 reg [7:0]GPR[3:0];
 	 reg [7:0]PC;
+   reg [7:0]IR;
    reg [7:0]DataMemory[31:0];
 
    //Clock Generator
@@ -71,24 +72,24 @@ module Microprocessor(
    	end
    end
    assign clock = sec;
-   
+
    //PC
    assign PCAddess = PC; // Instruction  = Instruction Memory[PC]
 
    //Instruction OP code is used to generate control signals
-   assign RegDst =  ~Instruction[6];
-	 assign RegWrite = ~Instruction[7];
-	 assign ALUSrc = Instruction[7] ^ Instruction[6];
-	 assign Branch  = Instruction[7]& Instruction[6];
-	 assign MemRead = (Instruction[7:6] == 2'b01 );
-	 assign MemWrite = (Instruction[7:6] == 2'b10);
-	 assign MemtoReg = Instruction[6];
-	 assign ALUOp = ~(Instruction[7] | Instruction[6]);
+   assign RegDst =  ~IR[6];
+	 assign RegWrite = ~IR[7];
+	 assign ALUSrc = IR[7] ^ IR[6];
+	 assign Branch  = IR[7]& IR[6];
+	 assign MemRead = (IR[7:6] == 2'b01 );
+	 assign MemWrite = (IR[7:6] == 2'b10);
+	 assign MemtoReg = IR[6];
+	 assign ALUOp = ~(IR[7] | IR[6]);
 
    //Register input/output connections
-   assign ReadRegister1 = Instruction[5:4];
-   assign ReadRegister2 = Instruction[3:2];
-   assign WriteRegister = RegDst ? Instruction[1:0] : Instruction[3:2];
+   assign ReadRegister1 = IR[5:4];
+   assign ReadRegister2 = IR[3:2];
+   assign WriteRegister = RegDst ? IR[1:0] : IR[3:2];
    assign RegWriteData = (MemtoReg) ? ReadData : ALUResult;
 
    assign ReadData1 = (ReadRegister1 == 2'd0) ? GPR[0]:
@@ -103,8 +104,8 @@ module Microprocessor(
 
 
    //Sign extend Instruction [1:0]
-   assign SignExtImm[1:0] = Instruction[1:0];
-   assign SignExtImm[7:2] = (Instruction[1]) ? 6'b111111 : 6'b000000;
+   assign SignExtImm[1:0] = IR[1:0];
+   assign SignExtImm[7:2] = (IR[1]) ? 6'b111111 : 6'b000000;
 
    //connections into the ALU
    assign ALUin1  = ReadData1;
@@ -165,6 +166,7 @@ module Microprocessor(
 
        else begin
 
+       IR <= Instruction;
        PC <= Branch ? PC+1+SignExtImm : PC+1; //Evaluate PC
 
        if (RegWrite) begin
