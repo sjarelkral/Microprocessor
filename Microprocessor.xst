@@ -1,5 +1,0 @@
-set -tmpdir "C:/Users/snucse/Desktop/Xlinx/Microprocessor/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/snucse/Desktop/Xlinx/Microprocessor/xst"
-elaborate
--ifn Microprocessor.prj
--ifmt mixed
