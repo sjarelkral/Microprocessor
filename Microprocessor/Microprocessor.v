@@ -20,9 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Microprocessor(
     output clock,
+    output mem_write;
+    output mem_read;
+    output reg_write;
+    output [1:0]op;
+    output [7:0]reg_num;
     output [7:0]instruction_address,
-    output [6:0]high_reg_write_data,
-    output [6:0]low_reg_write_data,
+    output [6:0]rwd_1,
+    output [6:0]rwd_0,
     input oscillator,
     input reset,
     input [7:0]instruction
@@ -39,19 +44,26 @@ module Microprocessor(
     end
     assign clock = sec;
 
+    //7-segment display
+    assign op = ir[7:6];
+
+
     //Storage elements
     reg [7:0]registers[3:0];
     reg [7:0]pc;
     reg [7:0]ir;
     reg [7:0]memory[31:0];
-
+    reg
 
     //buses and wires
     wire [7:0]literal;
 
     //connections
     assign instruction_address = pc;
-    assign literal = {ir[1],ir[1],ir[1],ir[1],ir[1],ir[1],ir[1],ir[0]}; //signext
+    assign immediate = {ir[1],ir[1],ir[1],ir[1],ir[1],ir[1],ir[1],ir[0]}; //signext
+    assign mem_write = (op == 2'b10);
+    assign mem_read = (op == 2'b01);
+    assign reg_write = ~op[1];
 
 
 
@@ -104,7 +116,9 @@ module Microprocessor(
     end
 
     else begin
-    ir <= instruction;
+
+    // PC <== pc + 1 + (offset /zero)
+    pc <= pc +1 + ((op == 2'd11)?immediate:8'd0);
 
     end
 
@@ -136,11 +150,6 @@ module Microprocessor(
 	 wire [7:0]ReadData; //mem
 	 wire [7:0]RegWriteData;
 	 wire [7:0]WriteData;
-	 wire [7:0]SignExtImm;
-
-
-
-
 
    //PC
    assign PCAddess = PC; // Instruction  = Instruction Memory[PC]
