@@ -46,6 +46,19 @@ module Microprocessor(
     reg [7:0]memory[31:0];
 
 
+    //buses and wires
+    wire [7:0]literal;
+
+    //connections
+    assign instruction_address = pc;
+    assign literal = {ir[1],ir[1],ir[1],ir[1],ir[1],ir[1],ir[1],ir[0]}; //signext
+
+
+
+
+
+
+
     always @ (posedge reset or posedge clock) begin
 
     if (reset) begin
@@ -90,6 +103,10 @@ module Microprocessor(
       memory[31] <= -15;
     end
 
+    else begin
+    ir <= instruction;
+
+    end
 
     end
 
@@ -144,20 +161,9 @@ module Microprocessor(
    assign WriteRegister = RegDst ? IR[1:0] : IR[3:2];
    assign RegWriteData = (MemtoReg) ? ReadData : ALUResult;
 
-   assign ReadData1 = (ReadRegister1 == 2'd0) ? GPR[0]:
-                      (ReadRegister1 == 2'd1) ? GPR[1]:
-                      (ReadRegister1 == 2'd2) ? GPR[2]:
-							 GPR[3];
+   assign ReadData1 = registers[ReadRegister1];
 
-    assign ReadData2 = (ReadRegister2 == 2'd0) ? GPR[0]:
-                      (ReadRegister2 == 2'd1) ? GPR[1]:
-                      (ReadRegister2 == 2'd2) ? GPR[2]:
-							 GPR[3];
-
-
-   //Sign extend Instruction [1:0]
-   assign SignExtImm[1:0] = IR[1:0];
-   assign SignExtImm[7:2] = (IR[1]) ? 6'b111111 : 6'b000000;
+    assign ReadData2 = registers[ReadRegister2];
 
    //connections into the ALU
    assign ALUin1  = ReadData1;
@@ -170,7 +176,7 @@ module Microprocessor(
    assign ReadData = DataMemory[MemAddress];
 
    always @ ( posedge clock or posedge reset) begin
-    
+
        else begin
 
        IR <= Instruction;
