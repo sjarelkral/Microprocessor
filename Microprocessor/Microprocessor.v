@@ -50,15 +50,16 @@ module Microprocessor(
     reg [7:0]ir;
     reg [7:0]memory[31:0];
     reg [4:0]rw_num;
-    reg [7:0]console_buffer;
-
-    //7-segment display
-    Console data1(rwd_1, console_buffer[7:4]);
-    Console data0(rwd_0, console_buffer[3:0]);
-    Console reg_num_(reg_num, pc[3:0]);
 
     //buses and wires
     wire [7:0]literal;
+	 wire [7:0]display_bus = registers[rw_num];
+	 
+	 
+	 //7-segment display
+    Console data1(rwd_1, display_bus[7:4]);
+    Console data0(rwd_0, display_bus[3:0]);
+    Console reg_num_(reg_num, pc[3:0]);
 
     //connections
     assign instruction_address = pc;
@@ -117,25 +118,29 @@ module Microprocessor(
     end
 
     else begin
+	 
+        ir = instruction;
 
-        // PC <== pc + 1 + (offset<jump> /zero)
-        pc <= pc +1 + ((op == 2'd11)?immediate:8'd0);
-
-        if (op == 2'd00) begin
-          rw_num <= ir[1:0];
+        if (op == 2'b00) begin
+          pc <= pc+1;
+			 rw_num <= ir[1:0];
           registers[rw_num] <= registers[ir[3:2]]+registers[ir[5:4]];
-          console_buffer <= registers[rw_num];
         end
 
-        else if (op == 2'd01) begin
-          rw_num <= ir[3:2];
-          registers[rw_num] <= memory[registers[ir[5:4]]+immediate];
-          console_buffer <= registers[rw_num];
+        else if (op == 2'b01) begin
+          pc <= pc+1;
+			 rw_num <= ir[3:2];
+          registers[ir[3:2]] <= memory[registers[ir[5:4]]+immediate];
         end
 
-        else if (op == 2'd10) begin
-          memory[registers[ir[5:4]]+immediate] <= registers[ir[3:2]];
+        else if (op == 2'b10) begin
+          pc <= pc+1;
+			 memory[registers[ir[5:4]]+immediate] <= registers[ir[3:2]];
         end
+		  
+		  else begin
+			pc <= pc + immediate+1;
+		  end
 
     end
 	end

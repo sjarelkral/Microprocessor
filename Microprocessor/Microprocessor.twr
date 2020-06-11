@@ -45,7 +45,7 @@ Clock oscillator to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-clock       |    8.655(R)|oscillator_BUFGP  |   0.000|
+clock       |    7.262(R)|oscillator_BUFGP  |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock oscillator
@@ -53,18 +53,18 @@ Clock to Setup on destination clock oscillator
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-oscillator     |    4.682|         |         |         |
+oscillator     |    4.300|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Jun 11 23:36:20 2020 
+Analysis completed Fri Jun 12 00:25:04 2020 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 347 MB
+Peak Memory Usage: 353 MB
 
 
 

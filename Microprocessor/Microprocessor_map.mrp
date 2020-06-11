@@ -9,35 +9,36 @@ Target Device  : xc3s50an
 Target Package : tqg144
 Target Speed   : -5
 Mapper Version : spartan3a -- $Revision: 1.55 $
-Mapped Date    : Thu Jun 11 23:36:11 2020
+Mapped Date    : Fri Jun 12 00:24:43 2020
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    8
+Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:            35 out of   1,408    2%
-  Number of 4 input LUTs:                30 out of   1,408    2%
+  Number of Slice Flip Flops:           328 out of   1,408   23%
+  Number of 4 input LUTs:               371 out of   1,408   26%
 Logic Distribution:
-  Number of occupied Slices:             31 out of     704    4%
-    Number of Slices containing only related logic:      31 out of      31 100%
-    Number of Slices containing unrelated logic:          0 out of      31   0%
+  Number of occupied Slices:            333 out of     704   47%
+    Number of Slices containing only related logic:     333 out of     333 100%
+    Number of Slices containing unrelated logic:          0 out of     333   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:          55 out of   1,408    3%
-    Number used as logic:                30
-    Number used as a route-thru:         25
+  Total Number of 4 input LUTs:         403 out of   1,408   28%
+    Number used as logic:               371
+    Number used as a route-thru:         32
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
   Number of bonded IOBs:                 45 out of     108   41%
-  Number of BUFGMUXs:                     1 out of      24    4%
+    IOB Flip Flops:                       2
+  Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                2.53
+Average Fanout of Non-Clock Nets:                3.90
 
-Peak Memory Usage:  600 MB
-Total REAL time to MAP completion:  1 secs 
-Total CPU time to MAP completion:   1 secs 
+Peak Memory Usage:  602 MB
+Total REAL time to MAP completion:  2 secs 
+Total CPU time to MAP completion:   2 secs 
 
 NOTES:
 
@@ -78,34 +79,9 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:PhysDesignRules:367 - The signal <instruction<5>_IBUF> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <instruction<6>_IBUF> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <instruction<7>_IBUF> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <instruction<0>_IBUF> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <instruction<1>_IBUF> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <instruction<2>_IBUF> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <instruction<3>_IBUF> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <instruction<4>_IBUF> is incomplete.
-   The signal does not drive any load pins in the design.
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network instruction<7>_IBUF has no load.
-INFO:LIT:395 - The above info message is repeated 7 more times for the following
-   (max. 5 shown):
-   instruction<6>_IBUF,
-   instruction<5>_IBUF,
-   instruction<4>_IBUF,
-   instruction<3>_IBUF,
-   instruction<2>_IBUF
-   To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -152,8 +128,8 @@ Section 6 - IOB Properties
 | instruction_address<7>             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | mem_read                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | mem_write                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
-| op<0>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
-| op<1>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
+| op<0>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    | OFF1         |          | 0 / 0    | 3STATE           |
+| op<1>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    | OFF1         |          | 0 / 0    | 3STATE           |
 | oscillator                         | IBUF             | INPUT     | LVCMOS25             |       |          |         |              |          | 0 / 0    |                  |
 | reg_num<0>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | reg_num<1>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |

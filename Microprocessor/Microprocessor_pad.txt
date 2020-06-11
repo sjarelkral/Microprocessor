@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Jun 11 23:36:18 2020
+Fri Jun 12 00:25:01 2020
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -107,9 +107,9 @@ Pinout by Pin Number:
 |P85       |                      |DIFFSLR   |IO_L04N_1/RHCLK1      |UNUSED   |           |1             |          |         |           |         |       |          |           |                |
 |P86       |                      |          |VCCO_1                |         |           |1             |          |         |           |         |2.50   |          |           |                |
 |P87       |clock                 |IOB       |IO_L05P_1/RHCLK2      |OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |       |LOCATED   |NO         |NONE            |
-|P88       |op<1>                 |IOB       |IO_L05N_1/TRDY1/RHCLK3|OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |       |LOCATED   |NO         |NONE            |
+|P88       |op<1>                 |IOB       |IO_L05N_1/TRDY1/RHCLK3|OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |       |LOCATED   |YES        |NONE            |
 |P89       |                      |          |GND                   |         |           |              |          |         |           |         |       |          |           |                |
-|P90       |op<0>                 |IOB       |IO_L06P_1/RHCLK4      |OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |       |LOCATED   |NO         |NONE            |
+|P90       |op<0>                 |IOB       |IO_L06P_1/RHCLK4      |OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |       |LOCATED   |YES        |NONE            |
 |P91       |reg_write             |IOB       |IO_L07P_1/IRDY1/RHCLK6|OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |       |LOCATED   |NO         |NONE            |
 |P92       |mem_read              |IOB       |IO_L06N_1/RHCLK5      |OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |       |LOCATED   |NO         |NONE            |
 |P93       |mem_write             |IOB       |IO_L07N_1/RHCLK7      |OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |       |LOCATED   |NO         |NONE            |
