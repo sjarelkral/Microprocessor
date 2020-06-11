@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/csehome/sjarelkral/Work/Microprocessor/Microprocessor/impact.xsl
+OUTFILE=/csehome/sjarelkral/Work/Microprocessor/Microprocessor/impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=/csehome/sjarelkral/Work/Microprocessor/Microprocessor
+LICENSE=iMPACT
+USER_INFO=iMPACT

@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/csehome/sjarelkral/Work/Microprocessor/IMEM/IMEM.xst" -ofn "/csehome/sjarelkral/Work/Microprocessor/IMEM/IMEM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc IMEM.ucf -p xc3s50an-tqg144-5 IMEM.ngc IMEM.ngd  
+map -intstyle ise -p xc3s50an-tqg144-5 -cm area -ir off -pr off -c 100 -o IMEM_map.ncd IMEM.ngd IMEM.pcf 
+par -w -intstyle ise -ol high -t 1 IMEM_map.ncd IMEM.ncd IMEM.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml IMEM.twx IMEM.ncd -o IMEM.twr IMEM.pcf -ucf IMEM.ucf 
+bitgen -intstyle ise -f IMEM.ut IMEM.ncd 

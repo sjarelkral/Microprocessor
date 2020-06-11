@@ -1,0 +1,221 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in -1533 day(s)
+INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /csehome/sjarelkral/Work/Microprocessor/Microprocessor/pa.fromNetlist.tcl
+# create_project -name Microprocessor -dir "/csehome/sjarelkral/Work/Microprocessor/Microprocessor/planAhead_run_2" -part xc3s50antqg144-5
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "/csehome/sjarelkral/Work/Microprocessor/Microprocessor/Microprocessor.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {/csehome/sjarelkral/Work/Microprocessor/Microprocessor} }
+# set_param project.pinAheadLayout  yes
+# set_property target_constrs_file "Microprocessor.ucf" [current_fileset -constrset]
+Adding file '/csehome/sjarelkral/Work/Microprocessor/Microprocessor/Microprocessor.ucf' to fileset 'constrs_1'
+# add_files [list {Microprocessor.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc3s50antqg144-5
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design Microprocessor.ngc ...
+WARNING:NetListWriters:298 - No output is written to Microprocessor.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file Microprocessor.edif ...
+ngc2edif: Total memory usage is 92156 kilobytes
+
+Parsing EDIF File [./planAhead_run_2/Microprocessor.data/cache/Microprocessor_ngc_8dfefed0.edif]
+Finished Parsing EDIF File [./planAhead_run_2/Microprocessor.data/cache/Microprocessor_ngc_8dfefed0.edif]
+INFO: [Designutils 20-910] Reading macro library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3a/hd_int_macros.edn
+Parsing EDIF File [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3a/hd_int_macros.edn]
+Finished Parsing EDIF File [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3a/hd_int_macros.edn]
+Loading clock regions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/xc3s50an/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/xc3s50an/ClockBuffers.xml
+Loading package from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/xc3s50an/tqg144/Package.xml
+Loading io standards from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3a/IOStandards.xml
+INFO: [Device 21-19] Loading pkg sso from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/xc3s50an/tqg144/SSORules.xml
+Loading list of drcs for the architecture : /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3a/drc.xml
+INFO: [Timing 38-77] Reading timing library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/spartan3a-5.lib.
+INFO: [Timing 38-34] Done reading timing library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/spartan3a-5.lib.
+Parsing UCF File [/csehome/sjarelkral/Work/Microprocessor/Microprocessor/Microprocessor.ucf]
+Finished Parsing UCF File [/csehome/sjarelkral/Work/Microprocessor/Microprocessor/Microprocessor.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 07d57da6
+startgroup
+set_property package_pin P76 [get_ports {reg_num[6]}]
+endgroup
+startgroup
+set_property package_pin P75 [get_ports {reg_num[5]}]
+endgroup
+startgroup
+set_property package_pin P72 [get_ports {reg_num[4]}]
+endgroup
+startgroup
+set_property package_pin P71 [get_ports {reg_num[3]}]
+endgroup
+startgroup
+set_property package_pin P70 [get_ports {reg_num[2]}]
+endgroup
+startgroup
+set_property package_pin P69 [get_ports {reg_num[1]}]
+endgroup
+startgroup
+set_property package_pin P70 [get_ports {reg_num[2]}]
+endgroup
+startgroup
+set_property package_pin P68 [get_ports {reg_num[0]}]
+endgroup
+save_constraints
+startgroup
+set_property package_pin P87 [get_ports clock]
+endgroup
+startgroup
+set_property package_pin P57 [get_ports oscillator]
+endgroup
+startgroup
+set_property package_pin P47 [get_ports reset]
+endgroup
+set_property package_pin "" [get_ports [list  reg_write]]
+startgroup
+set_property package_pin P92 [get_ports mem_read]
+endgroup
+startgroup
+set_property package_pin P93 [get_ports mem_write]
+endgroup
+startgroup
+set_property package_pin P91 [get_ports reg_write]
+endgroup
+startgroup
+set_property package_pin P88 [get_ports {op[1]}]
+endgroup
+startgroup
+set_property package_pin P90 [get_ports {op[0]}]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports {rwd_0[6]}]
+endgroup
+startgroup
+set_property package_pin P28 [get_ports {rwd_0[5]}]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports {rwd_0[4]}]
+endgroup
+startgroup
+set_property package_pin P25 [get_ports {rwd_0[3]}]
+endgroup
+startgroup
+set_property package_pin P25 [get_ports {rwd_0[3]}]
+endgroup
+startgroup
+set_property package_pin P24 [get_ports {rwd_0[2]}]
+endgroup
+startgroup
+set_property package_pin P21 [get_ports {rwd_0[1]}]
+endgroup
+startgroup
+set_property package_pin P20 [get_ports {rwd_0[0]}]
+endgroup
+save_constraints
+startgroup
+set_property package_pin P19 [get_ports {rwd_1[6]}]
+endgroup
+startgroup
+set_property package_pin P18 [get_ports {rwd_1[5]}]
+endgroup
+startgroup
+set_property package_pin P16 [get_ports {rwd_1[4]}]
+endgroup
+startgroup
+set_property package_pin P15 [get_ports {rwd_1[3]}]
+endgroup
+startgroup
+set_property package_pin P13 [get_ports {rwd_1[2]}]
+endgroup
+startgroup
+set_property package_pin P12 [get_ports {rwd_1[1]}]
+endgroup
+startgroup
+set_property package_pin P11 [get_ports {rwd_1[0]}]
+endgroup
+startgroup
+set_property package_pin P105 [get_ports {instruction_address[7]}]
+endgroup
+startgroup
+set_property package_pin P104 [get_ports {instruction_address[6]}]
+endgroup
+startgroup
+set_property package_pin P103 [get_ports {instruction_address[5]}]
+endgroup
+set_property package_pin "" [get_ports [list  {instruction_address[3]}]]
+startgroup
+set_property package_pin P102 [get_ports {instruction_address[4]}]
+endgroup
+startgroup
+set_property package_pin P101 [get_ports {instruction_address[3]}]
+endgroup
+startgroup
+set_property package_pin P99 [get_ports {instruction_address[2]}]
+endgroup
+set_property package_pin "" [get_ports [list  {instruction_address[1]}]]
+startgroup
+set_property package_pin P96 [get_ports {instruction_address[0]}]
+endgroup
+startgroup
+set_property package_pin P98 [get_ports {instruction_address[1]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {instruction_address[1]}]]
+set_property is_loc_fixed true [get_ports [list  {instruction_address[1]}]]
+startgroup
+set_property package_pin P130 [get_ports {instruction[7]}]
+endgroup
+startgroup
+set_property package_pin P129 [get_ports {instruction[6]}]
+endgroup
+set_property package_pin "" [get_ports [list  {instruction[4]}]]
+startgroup
+set_property package_pin P127 [get_ports {instruction[5]}]
+endgroup
+startgroup
+set_property package_pin P125 [get_ports {instruction[4]}]
+endgroup
+set_property package_pin "" [get_ports [list  {instruction[3]}]]
+startgroup
+set_property package_pin P124 [get_ports {instruction[2]}]
+endgroup
+set_property package_pin "" [get_ports [list  {instruction[3]}]]
+set_property is_loc_fixed false [get_ports [list  {instruction[4]}]]
+startgroup
+set_property package_pin P126 [get_ports {instruction[4]}]
+endgroup
+startgroup
+set_property package_pin P125 [get_ports {instruction[3]}]
+endgroup
+startgroup
+set_property package_pin P121 [get_ports {instruction[1]}]
+endgroup
+startgroup
+set_property package_pin P120 [get_ports {instruction[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {instruction[0]}]]
+set_property is_loc_fixed true [get_ports [list  {instruction[0]}]]
+save_constraints
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Thu Jun 11 23:16:39 2020...
+INFO: [Common 17-83] Releasing license: PlanAhead

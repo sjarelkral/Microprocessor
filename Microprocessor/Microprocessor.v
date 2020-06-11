@@ -24,7 +24,7 @@ module Microprocessor(
     output mem_read,
     output reg_write,
     output [1:0]op,
-    output [7:0]reg_num,
+    output [6:0]reg_num,
     output [7:0]instruction_address,
     output [6:0]rwd_1,
     output [6:0]rwd_0,
@@ -55,7 +55,7 @@ module Microprocessor(
     //7-segment display
     Console data1(rwd_1, console_buffer[7:4]);
     Console data0(rwd_0, console_buffer[3:0]);
-    Console reg_num_(reg_num, rw_num);
+    Console reg_num_(reg_num, pc[3:0]);
 
     //buses and wires
     wire [7:0]literal;
@@ -67,7 +67,6 @@ module Microprocessor(
     assign mem_read = (op == 2'b01);
     assign reg_write = ~op[1];
     assign op = ir[7:6];
-    assign console_buffer <= registers[rw_num];
 
     always @ (posedge reset or posedge clock) begin
 

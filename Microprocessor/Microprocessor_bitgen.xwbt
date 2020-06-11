@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/csehome/sjarelkral/Work/Microprocessor/Microprocessor/Microprocessor.ncd
+OUTFILE=/csehome/sjarelkral/Work/Microprocessor/Microprocessor/Microprocessor.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s50an-5tqg144
+WORKINGDIR=/csehome/sjarelkral/Work/Microprocessor/Microprocessor
+LICENSE=WebPack
+USER_INFO=211016637_0_0_814
