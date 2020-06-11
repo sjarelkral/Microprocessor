@@ -123,16 +123,19 @@ module Microprocessor(
         pc <= pc +1 + ((op == 2'd11)?immediate:8'd0);
 
         if (op == 2'd00) begin
-          registers[ir[1:0]] <= registers[ir[3:2]]+registers[ir[5:4]];
+          rw_num <= ir[1:0];
+          registers[rw_num] <= registers[ir[3:2]]+registers[ir[5:4]];
+          console_buffer <= registers[rw_num];
         end
 
         else if (op == 2'd01) begin
-          registers[ir[3:2]] <= memory[registers[ir[5:4]]+immediate];
+          rw_num <= ir[3:2];
+          registers[rw_num] <= memory[registers[ir[5:4]]+immediate];
+          console_buffer <= registers[rw_num];
         end
 
         else if (op == 2'd10) begin
           memory[registers[ir[5:4]]+immediate] <= registers[ir[3:2]];
-
         end
 
     end
