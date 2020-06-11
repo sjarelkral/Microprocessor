@@ -20,54 +20,24 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Microprocessor(
     output clock,
-    output [7:0]instruction_address,
-    output [6:0]high_reg_write_data,
-    output [6:0]low_reg_write_data,
-    input oscillator,
+    output [7:0]PCAddess,
+    output [6:0]high_out,
+    output [6:0]low_out,
+    input oscillator50Mhz,
     input reset,
-    input [7:0]instruction
+    input [7:0]Instruction
     );
 
-    //Frequency divider : Generate 1 Hz clock (output LED, internal input for components)
+    //Clock Generator
     reg [25:0] delay;
     reg sec;
-    always @(posedge oscillator)begin
+    always @(posedge oscillator50Mhz)begin
     	delay  <= (delay == 25000000)?26'd0:(delay+1);
     	if (delay == 26'd0)begin
     		sec <= ~sec;
     	end
     end
     assign clock = sec;
-
-    //Storage elements
-    reg [7:0]registers[3:0];
-    reg [7:0]pc;
-    reg [7:0]ir;
-    reg [7:0]memory[31:0];
-
-
-    always @ (posedge reset or posedge clock) begin
-
-    if (reset) begin
-      //reset pc
-      pc <= 8'd0;
-
-      //reset registers
-      registers <= 32'd0;
-
-    end
-
-
-    end
-
-
-
-
-
-
-
-
-
 
 
     reg [7:0]console_buffer;
@@ -98,7 +68,11 @@ module Microprocessor(
 	 wire [7:0]WriteData;
 	 wire [7:0]SignExtImm;
 
-
+	 //Registers
+	 reg [7:0]GPR[3:0];
+	 reg [7:0]PC;
+   reg [7:0]IR;
+   reg [7:0]DataMemory[31:0];
 
 
 
