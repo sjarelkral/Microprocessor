@@ -1,0 +1,5 @@
+set -tmpdir "/csehome/sjarelkral/Work/Microprocessor/Microprocessor/xst/projnav.tmp"
+set -xsthdpdir "/csehome/sjarelkral/Work/Microprocessor/Microprocessor/xst"
+elaborate
+-ifn Microprocessor.prj
+-ifmt mixed

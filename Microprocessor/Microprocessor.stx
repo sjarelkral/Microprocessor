@@ -1,0 +1,65 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /csehome/sjarelkral/Work/Microprocessor/Microprocessor/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to /csehome/sjarelkral/Work/Microprocessor/Microprocessor/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "Console.v" in library work
+Compiling verilog file "Microprocessor.v" in library work
+Module <Console> compiled
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 129 'PC' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 132 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 133 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 134 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 134 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 135 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 135 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 136 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 137 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 138 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 139 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 139 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 142 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 143 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 144 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 144 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 147 'GPR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 148 'GPR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 149 'GPR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 150 'GPR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 152 'GPR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 153 'GPR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 154 'GPR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 155 'GPR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 159 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 160 'IR' has not been declared
+ERROR:HDLCompilers:28 - "Microprocessor.v" line 170 'DataMemory' has not been declared
+ERROR:HDLCompilers:26 - "Microprocessor.v" line 174 unexpected token: 'else'
+Module <Microprocessor> compiled
+ERROR:HDLCompilers:26 - "Microprocessor.v" line 174 expecting 'endmodule', found 'begin'
+Analysis of file <"Microprocessor.prj"> failed.
+--> 
+
+
+Total memory usage is 459504 kilobytes
+
+Number of errors   :   29 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
