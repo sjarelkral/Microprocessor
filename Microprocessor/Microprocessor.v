@@ -20,11 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Microprocessor(
     output clock,
-    output mem_write;
-    output mem_read;
-    output reg_write;
-    output [1:0]op;
-    output [7:0]reg_num;
+    output mem_write,
+    output mem_read,
+    output reg_write,
+    output [1:0]op,
+    output [7:0]reg_num,
     output [7:0]instruction_address,
     output [6:0]rwd_1,
     output [6:0]rwd_0,
