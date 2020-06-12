@@ -23,7 +23,7 @@
    * Additional input: *reset, frequency selectors(0.5Hz, 0.25Hz) using tactile switches*
  * Output: Current value of Reg Write Data, extra optional features e.g 1Hz clock tick LED.
    * **Hexadecimal** on 7-segment displays
-   * Additional output: *PC value & RegWrite register number on 7-segment displays, opcode,operating clock, MemRead, MemWrite, RegWrite on (LED lights), *
+   * Additional output: *PC value & RegWrite register number on 7-segment displays, opcode,operating clock, MemRead, MemWrite, RegWrite on (LED lights)*
  
 ## Microprocessor Design
 
