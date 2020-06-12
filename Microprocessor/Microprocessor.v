@@ -25,11 +25,13 @@ module Microprocessor(
     output reg_write,
     output [1:0]op,
     output [6:0]reg_num,
+	 output [6:0]pc_high,
+	 output [6:0]pc_low,
     output [7:0]instruction_address,
     output [6:0]rwd_1,
     output [6:0]rwd_0,
-    input frequency_2;
-    input frequency_4;
+    input frequency_2,
+    input frequency_4,
     input oscillator,
     input reset,
     input [7:0]instruction
@@ -40,8 +42,8 @@ module Microprocessor(
     reg delay_2;
     reg delay_4;
     reg sec;
-    reg sec_2;
-    reg sec_4;
+    reg two_sec;
+    reg four_sec;
 
     always @(posedge oscillator)begin
     	delay  <= (delay == 25000000)?26'd0:(delay+1);
@@ -51,30 +53,21 @@ module Microprocessor(
     end
 
     always @ ( posedge sec ) begin
-      delay_2  <= ~delay_2;
-      if (~delay_2)begin
-      sec_2 <= ~sec_2;
-      end
+      two_sec <= ~two_sec;
     end
 
-    always @ ( posedge sec_2 ) begin
-      delay_4  <= ~delay_4;
-      if (~delay_4)begin
-      sec_4 <= ~sec_4;
-      end
+    always @ ( posedge two_sec ) begin
+      four_sec <= ~four_sec;
     end
 
-
-
-
-    assign clock = frequency_4 ? sec_4 :
-                    frequency_2 ? sec_2 :
+    assign clock = frequency_4 ? four_sec:
+                    frequency_2 ? two_sec :
                     sec;
 
     //Storage elements
     reg [7:0]registers[3:0];
     reg [7:0]pc;
-    reg [7:0]ir;
+    wire [7:0]ir;
     reg [7:0]memory[31:0];
     reg [4:0]rw_num;
 
@@ -86,7 +79,9 @@ module Microprocessor(
 	 //7-segment display
     Console data1(rwd_1, display_bus[7:4]);
     Console data0(rwd_0, display_bus[3:0]);
-    Console reg_num_(reg_num, pc[3:0]);
+    Console  pc_counter_high(pc_high, pc[7:4]);
+	 Console  pc_counter_low(pc_low, pc[3:0]);
+    Console reg_num_(reg_num, rw_num);
 
     //connections
     assign instruction_address = pc;
@@ -95,8 +90,9 @@ module Microprocessor(
     assign mem_read = (op == 2'b01);
     assign reg_write = ~op[1];
     assign op = ir[7:6];
+	 assign ir = instruction;
 
-    always @ (posedge reset or posedge clock) begin
+    always @ (posedge clock or posedge reset) begin
 
     if (reset) begin
       //reset pc
@@ -145,9 +141,7 @@ module Microprocessor(
     end
 
     else begin
-
-        ir = instruction;
-
+	 
         if (op == 2'b00) begin
           pc <= pc+1;
 			 rw_num <= ir[1:0];
