@@ -25,8 +25,8 @@ module Microprocessor(
     output reg_write,
     output [1:0]op,
     output [6:0]reg_num,
-	 output [6:0]pc_high,
-	 output [6:0]pc_low,
+    output [6:0]pc_high,
+	  output [6:0]pc_low,
     output [7:0]instruction_address,
     output [6:0]rwd_1,
     output [6:0]rwd_0,
@@ -73,14 +73,14 @@ module Microprocessor(
 
     //buses and wires
     wire [7:0]literal;
-	wire [7:0]display_bus = registers[rw_num];
+    wire [7:0]display_bus = registers[rw_num];
 
 
 	 //7-segment display
     Console data1(rwd_1, display_bus[7:4]);
     Console data0(rwd_0, display_bus[3:0]);
     Console  pc_counter_high(pc_high, pc[7:4]);
-	 Console  pc_counter_low(pc_low, pc[3:0]);
+    Console  pc_counter_low(pc_low, pc[3:0]);
     Console reg_num_(reg_num, rw_num);
 
     //connections
@@ -90,7 +90,7 @@ module Microprocessor(
     assign mem_read = (op == 2'b01);
     assign reg_write = ~op[1];
     assign op = ir[7:6];
-	 assign ir = instruction;
+    assign ir = instruction;
 
     always @ (posedge clock or posedge reset) begin
 
@@ -116,7 +116,7 @@ module Microprocessor(
       memory[7] <= 7;
       memory[8] <= 8;
       memory[9] <= 9;
-      memory[10] <= 0;
+      memory[10] <= 10;
       memory[11] <= 11;
       memory[12] <= 12;
       memory[13] <= 13;
@@ -141,7 +141,7 @@ module Microprocessor(
     end
 
     else begin
-	 
+
         if (op == 2'b00) begin
           pc <= pc+1;
 			 rw_num <= ir[1:0];
