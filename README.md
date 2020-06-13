@@ -18,10 +18,15 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
   * Register size : 8-bit
   * Number of registers : 4
   * Memory size : 8-bit word size, 8-bit memory address, 32 memory address locations
-* **Input** : Clocks are generated from on-board 50Hz oscillator. Provided clock speeds are *1Hz (Base clock), 0.5Hz* and *0.25 Hz*. 0.25Hz and 0.5Hz can be selected using frequency selector input.
-
-
-
+* **Input** :
+   * 8-bit instruction from external memory
+   * `reset` button
+   * 0.25Hz ans 0.5Hz frequency selectors
+* **Output** :
+   * Current value of RegWriteData in Hexadecimal
+   * Register to which RegWriteData is written
+   * Value of PC i.e *next instruction too be executed*
+   * Value of `MemRead`, `MemWrite`, `RegWrite`, `OP Code` and `clock`
  
 ## Microprocessor Design
 
