@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Mon Jun 15 22:08:19 2020">
+  <application stringID="Xst" timeStamp="Mon Jun 15 22:29:25 2020">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -53,7 +53,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz"/>
-          <item stringID="speed" value="3385.051 MHz"/>
+          <item stringID="speed" value="2966.150 MHz"/>
         </row>
       </table>
     </section>
@@ -139,8 +139,8 @@
       <section stringID="XST_CELL_USAGE">
         <item dataType="int" stringID="XST_BELS" value="24">
           <item dataType="int" stringID="XST_GND" value="1"/>
-          <item dataType="int" stringID="XST_LUT3" value="4"/>
-          <item dataType="int" stringID="XST_LUT4" value="11"/>
+          <item dataType="int" stringID="XST_LUT3" value="1"/>
+          <item dataType="int" stringID="XST_LUT4" value="14"/>
           <item dataType="int" stringID="XST_MUXF5" value="8"/>
         </item>
         <item dataType="int" stringID="XST_IO_BUFFERS" value="13">

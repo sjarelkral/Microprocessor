@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: IMEM.prj
@@ -212,8 +212,8 @@ Design Statistics
 Cell Usage :
 # BELS                             : 24
 #      GND                         : 1
-#      LUT3                        : 4
-#      LUT4                        : 11
+#      LUT3                        : 1
+#      LUT4                        : 14
 #      MUXF5                       : 8
 # IO Buffers                       : 13
 #      IBUF                        : 5
@@ -269,20 +269,20 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 64 / 8
+  Total number of paths / destination ports: 67 / 8
 -------------------------------------------------------------------------
 Delay:               7.325ns (Levels of Logic = 4)
-  Source:            Read_Address<3> (PAD)
+  Source:            Read_Address<0> (PAD)
   Destination:       instruction<7> (PAD)
 
-  Data Path: Read_Address<3> to instruction<7>
+  Data Path: Read_Address<0> to instruction<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            14   0.824   0.958  Read_Address_3_IBUF (Read_Address_3_IBUF)
-     LUT4:I0->O            1   0.561   0.000  Mrom_instruction6_F (N40)
-     MUXF5:I0->O           1   0.229   0.357  Mrom_instruction6 (instruction_6_OBUF)
-     OBUF:I->O                 4.396          instruction_6_OBUF (instruction<6>)
+     IBUF:I->O            14   0.824   0.958  Read_Address_0_IBUF (Read_Address_0_IBUF)
+     LUT4:I0->O            1   0.561   0.000  Mrom_instruction3_G (N41)
+     MUXF5:I1->O           1   0.229   0.357  Mrom_instruction3 (instruction_3_OBUF)
+     OBUF:I->O                 4.396          instruction_3_OBUF (instruction<3>)
     ----------------------------------------
     Total                      7.325ns (6.010ns logic, 1.315ns route)
                                        (82.0% logic, 18.0% route)
@@ -291,7 +291,7 @@ Delay:               7.325ns (Levels of Logic = 4)
 
 
 Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 2.52 secs
+Total CPU time to Xst completion: 2.49 secs
  
 --> 
 

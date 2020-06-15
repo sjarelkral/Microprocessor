@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-310-2-07::  Mon Jun 15 22:08:29 2020
+310-2-07::  Mon Jun 15 22:29:35 2020
 
 par -w -intstyle ise -ol high -t 1 IMEM_map.ncd IMEM.ncd IMEM.pcf 
 
@@ -82,16 +82,16 @@ Phase 6.36  Local Placement Optimization (Checksum:cead9a2) REAL time: 1 secs
 
 Phase 7.8  Global Placement
 ..
-Phase 7.8  Global Placement (Checksum:1809023c) REAL time: 1 secs 
+Phase 7.8  Global Placement (Checksum:17cee3f8) REAL time: 1 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:1809023c) REAL time: 1 secs 
+Phase 8.5  Local Placement Optimization (Checksum:17cee3f8) REAL time: 1 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:17c090a0) REAL time: 1 secs 
+Phase 9.18  Placement Optimization (Checksum:17a669bb) REAL time: 1 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:17c090a0) REAL time: 1 secs 
+Phase 10.5  Local Placement Optimization (Checksum:17a669bb) REAL time: 1 secs 
 
 Total REAL time to Placer completion: 1 secs 
 Total CPU  time to Placer completion: 1 secs 
@@ -102,13 +102,13 @@ Writing design to file IMEM.ncd
 Starting Router
 
 
-Phase  1  : 72 unrouted;      REAL time: 1 secs 
+Phase  1  : 75 unrouted;      REAL time: 1 secs 
 
-Phase  2  : 72 unrouted;      REAL time: 1 secs 
+Phase  2  : 75 unrouted;      REAL time: 1 secs 
 
-Phase  3  : 13 unrouted;      REAL time: 1 secs 
+Phase  3  : 22 unrouted;      REAL time: 1 secs 
 
-Phase  4  : 13 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
+Phase  4  : 22 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 
 Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 

@@ -50,9 +50,9 @@ module IMEM(
 	
 	assign MemByte[9]  = {2'b00, 2'b11, 2'b10, 2'b01};
 	
-	assign MemByte[10]  = {2'b01, 2'b00, 2'b11, 2'b01};
+	assign MemByte[10]  = {2'b10, 2'b10, 2'b01, 2'b00};
 	
-	assign MemByte[11]  = {2'b01, 2'b00, 2'b11, 2'b01};
+	assign MemByte[11]  = {2'b01, 2'b10, 2'b00, 2'b00};
 	
 	assign MemByte[12]  = {2'b01, 2'b00, 2'b11, 2'b01};
 	
