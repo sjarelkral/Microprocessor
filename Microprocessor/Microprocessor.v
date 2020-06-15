@@ -26,7 +26,7 @@ module Microprocessor(
     output [1:0]op,
     output [6:0]reg_num,
     output [6:0]pc_high,
-	 output [6:0]pc_low,
+    output [6:0]pc_low,
     output [7:0]instruction_address,
     output [6:0]rwd_1,
     output [6:0]rwd_0,
@@ -37,7 +37,7 @@ module Microprocessor(
     input [7:0]instruction
     );
 
-    //Frequency dividers 
+    //Frequency dividers
     reg [25:0] delay;
     reg delay_2;
     reg delay_4;
@@ -67,12 +67,12 @@ module Microprocessor(
     //Storage elements
     reg [7:0]registers[3:0];
     reg [7:0]pc;
-    wire [7:0]ir;
+    reg [1:0]op_out;
     reg [7:0]memory[31:0];
     reg [4:0]rw_num;
-	 reg pc_invalid;
-	 reg data_invalid;
-	 reg reg_invalid;
+    reg pc_invalid;
+    reg data_invalid;
+    reg reg_invalid;
 
     //buses and wires
     wire [7:0]literal;
@@ -82,102 +82,122 @@ module Microprocessor(
 	 //7-segment display
     Console data1(rwd_1, display_bus[7:4],data_invalid);
     Console data0(rwd_0, display_bus[3:0],data_invalid);
-    Console  pc_counter_high(pc_high, pc[7:4],pc_invalid);
-    Console  pc_counter_low(pc_low, pc[3:0], pc_invalid);
+    Console  pc_counter_high(pc_high, pc[7:4],1'b0);
+    Console  pc_counter_low(pc_low, pc[3:0], 1'b0);
     Console reg_num_(reg_num, rw_num,reg_invalid);
 
     //connections
     assign instruction_address = pc;
-    assign immediate = {ir[1],ir[1],ir[1],ir[1],ir[1],ir[1],ir[1],ir[0]}; //signext
+    assign immediate = {instruction[1],instruction[1],instruction[1],
+                        instruction[1],instruction[1],instruction[1],
+                        instruction[1],instruction[0]}; //signext
     assign mem_write = (op == 2'b10);
     assign mem_read = (op == 2'b01);
     assign reg_write = ~op[1];
-    assign op = ir[7:6];
-    assign ir = instruction;
+    assign op = op_out;
 
-    always @ (posedge clock or posedge reset) begin
+    always @ (posedge clock) begin
 
-    if (reset) begin
-      //reset pc
-      pc <= 8'd0;
-		pc_invalid <= 1'b0;
-		data_invalid <= 1'b1;
-		reg_invalid <= 1'b1;
+      if (~reset) begin
 
-      //reset registers
-      registers[0] <= 8'd0;
-      registers[1] <= 8'd0;
-      registers[2] <= 8'd0;
-      registers[3] <= 8'd0;
+      op_out <= instruction[7:6];
+      //Increment PC
+      pc <= pc+1;
 
-
-      //reinitialize memory
-      memory[0] <= 0;
-      memory[1] <= 1;
-      memory[2] <= 2;
-      memory[3] <= 3;
-      memory[4] <= 4;
-      memory[5] <= 5;
-      memory[6] <= 6;
-      memory[7] <= 7;
-      memory[8] <= 8;
-      memory[9] <= 9;
-      memory[10] <= 10;
-      memory[11] <= 11;
-      memory[12] <= 12;
-      memory[13] <= 13;
-      memory[14] <= 14;
-      memory[15] <= 15;
-      memory[16] <= 0;
-      memory[17] <= -1;
-      memory[18] <= -2;
-      memory[19] <= -3;
-      memory[20] <= -4;
-      memory[21] <= -5;
-      memory[22] <= -6;
-      memory[23] <= -7;
-      memory[24] <= -8;
-      memory[25] <= -9;
-      memory[26] <= -10;
-      memory[27] <= -11;
-      memory[28] <= -12;
-      memory[29] <= -13;
-      memory[30] <= -14;
-      memory[31] <= -15;
-    end
-
-    else begin
-
-        pc_invalid <= 1'b0;
-		  pc <= pc+1;
+      //Default for RegWriteData display
 		  data_invalid <= 1'b0;
 		  reg_invalid <= 1'b0;
-		  
-		  if (op == 2'b00) begin
-          
-			 rw_num <= ir[1:0];
-          registers[rw_num] <= registers[ir[3:2]]+registers[ir[5:4]];
+
+
+		  //Add instruction
+        if (instruction[7:6] == 2'b00) begin
+			     rw_num <= instruction[1:0];
+           registers[instruction[1:0]] <= registers[instruction[3:2]] +
+                                registers[instruction[5:4]];
         end
 
-        else if (op == 2'b01) begin
-			 rw_num <= ir[3:2];
-          registers[ir[3:2]] <= memory[registers[ir[5:4]]+immediate];
+        //Load instruction
+        else if (instruction[7:6] == 2'b01) begin
+			     rw_num <= instruction[3:2];
+           registers[instruction[3:2]] <= memory[registers[instruction[5:4]]+immediate];
         end
 
-        else if (op == 2'b10) begin
-			 data_invalid <= 1'b1;
-			 reg_invalid <= 1'b1;
-			 memory[registers[ir[5:4]]+immediate] <= registers[ir[3:2]];
+        //Store instruction
+        else if (instruction[7:6] == 2'b10) begin
+
+          //RegWriteData irrelevant
+			     data_invalid <= 1'b1;
+			     reg_invalid <= 1'b1;
+
+           //instruction body
+			     memory[registers[instruction[5:4]]+immediate] <= registers[instruction[3:2]];
         end
 
-		  else begin
-			data_invalid <= 1'b1;
-			reg_invalid <= 1'b1;
-			
-			pc <= pc + immediate+1;
-		  end
+        //Jump instruction
+        else begin
 
-    end
-	end
+          //RegWriteData irrelevant
+			     data_invalid <= 1'b1;
+			     reg_invalid <= 1'b1;
+
+           //instruction body
+			     pc <= pc + immediate+1;
+		    end
+      end
+
+	   end
+
+  always @ (reset) begin
+
+  //Asynchronous reset trigers a reset sequence
+
+    //reset pc
+    pc <= 8'd0;
+    pc_invalid <= 1'b0;
+    data_invalid <= 1'b1;
+    reg_invalid <= 1'b1;
+
+    //reset registers
+    registers[0] <= 8'd0;
+    registers[1] <= 8'd0;
+    registers[2] <= 8'd0;
+    registers[3] <= 8'd0;
+
+
+    //reinitialize memory
+    memory[0] <= 0;
+    memory[1] <= 1;
+    memory[2] <= 2;
+    memory[3] <= 3;
+    memory[4] <= 4;
+    memory[5] <= 5;
+    memory[6] <= 6;
+    memory[7] <= 7;
+    memory[8] <= 8;
+    memory[9] <= 9;
+    memory[10] <= 10;
+    memory[11] <= 11;
+    memory[12] <= 12;
+    memory[13] <= 13;
+    memory[14] <= 14;
+    memory[15] <= 15;
+    memory[16] <= 0;
+    memory[17] <= -1;
+    memory[18] <= -2;
+    memory[19] <= -3;
+    memory[20] <= -4;
+    memory[21] <= -5;
+    memory[22] <= -6;
+    memory[23] <= -7;
+    memory[24] <= -8;
+    memory[25] <= -9;
+    memory[26] <= -10;
+    memory[27] <= -11;
+    memory[28] <= -12;
+    memory[29] <= -13;
+    memory[30] <= -14;
+    memory[31] <= -15;
+
+  end
 
 endmodule
