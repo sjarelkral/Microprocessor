@@ -37,7 +37,7 @@ module Microprocessor(
     input [7:0]instruction
     );
 
-    //Frequency dividers : Generate 1 Hz clock (output LED, internal input for components)
+    //Frequency dividers 
     reg [25:0] delay;
     reg delay_2;
     reg delay_4;
@@ -70,6 +70,9 @@ module Microprocessor(
     wire [7:0]ir;
     reg [7:0]memory[31:0];
     reg [4:0]rw_num;
+	 reg pc_invalid;
+	 reg data_invalid;
+	 reg reg_invalid;
 
     //buses and wires
     wire [7:0]literal;
@@ -77,11 +80,11 @@ module Microprocessor(
 
 
 	 //7-segment display
-    Console data1(rwd_1, display_bus[7:4]);
-    Console data0(rwd_0, display_bus[3:0]);
-    Console  pc_counter_high(pc_high, pc[7:4]);
-    Console  pc_counter_low(pc_low, pc[3:0]);
-    Console reg_num_(reg_num, rw_num);
+    Console data1(rwd_1, display_bus[7:4],data_invalid);
+    Console data0(rwd_0, display_bus[3:0],data_invalid);
+    Console  pc_counter_high(pc_high, pc[7:4],pc_invalid);
+    Console  pc_counter_low(pc_low, pc[3:0], pc_invalid);
+    Console reg_num_(reg_num, rw_num,reg_invalid);
 
     //connections
     assign instruction_address = pc;
@@ -97,6 +100,9 @@ module Microprocessor(
     if (reset) begin
       //reset pc
       pc <= 8'd0;
+		pc_invalid <= 1'b1;
+		data_invalid <= 1'b1;
+		reg_invalid <= 1'b1;
 
       //reset registers
       registers[0] <= 8'd0;
@@ -142,24 +148,32 @@ module Microprocessor(
 
     else begin
 
-        if (op == 2'b00) begin
-          pc <= pc+1;
+        pc_invalid <= 1'b0;
+		  pc <= pc+1;
+		  data_invalid <= 1'b0;
+		  reg_invalid <= 1'b0;
+		  
+		  if (op == 2'b00) begin
+          
 			 rw_num <= ir[1:0];
           registers[rw_num] <= registers[ir[3:2]]+registers[ir[5:4]];
         end
 
         else if (op == 2'b01) begin
-          pc <= pc+1;
 			 rw_num <= ir[3:2];
           registers[ir[3:2]] <= memory[registers[ir[5:4]]+immediate];
         end
 
         else if (op == 2'b10) begin
-          pc <= pc+1;
+			 data_invalid <= 1'b1;
+			 reg_invalid <= 1'b1;
 			 memory[registers[ir[5:4]]+immediate] <= registers[ir[3:2]];
         end
 
 		  else begin
+			data_invalid <= 1'b1;
+			reg_invalid <= 1'b1;
+			
 			pc <= pc + immediate+1;
 		  end
 
