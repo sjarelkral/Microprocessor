@@ -28,7 +28,7 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
    * Value of `pc` i.e *next instruction to be executed*
    * Value of `MemRead`, `MemWrite`, `RegWrite`, `op` and `clock`
 * **Modules** :
-   * The ALU, control unit, system memory, frequency divider, pc and registers are condensed into a behavioural description of `Microprocessor` mmodule.
+   * The ALU, control unit, system memory, frequency divider, pc and registers are condensed into a behavioural description of `Microprocessor` module.
    * `IMEM` module is a testbench for the microprocessor.
    * `Console` module is a 4-bit Hexadecimal to 7-segment display converter.
  
