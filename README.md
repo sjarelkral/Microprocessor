@@ -1,5 +1,6 @@
 # 8-Bit Microprocessor
 * [Project Overview](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#project-overview)
+* [Modules](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#modules)
 * [Microprocessor Design](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#microprocessor-design)
     * [Data Path](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#data-path)
     * [Instruction Set Architecture](https://github.com/sjarelkral/Microprocessor/blob/master/README.md#instruction-set-architecture)
