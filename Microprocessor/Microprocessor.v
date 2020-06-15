@@ -23,6 +23,8 @@ module Microprocessor(
     output mem_write,
     output mem_read,
     output reg_write,
+    output dp_1;
+    output dp_2;
     output [1:0]op,
     output [6:0]reg_num,
     output [6:0]pc_high,
@@ -30,6 +32,7 @@ module Microprocessor(
     output [7:0]instruction_address,
     output [6:0]rwd_1,
     output [6:0]rwd_0,
+    output [1:0]r_symbol;
     input frequency_2,
     input frequency_4,
     input oscillator,
@@ -37,7 +40,7 @@ module Microprocessor(
     input [7:0]instruction
     );
 
-    //Frequency dividers
+    //Frequency divider section
     reg [25:0] delay;
     reg delay_2;
     reg delay_4;
@@ -64,20 +67,21 @@ module Microprocessor(
                     frequency_2 ? two_sec :
                     sec;
 
-    //Storage elements
+    //Memory and Registers section
     reg [7:0]registers[3:0];
     reg [7:0]pc;
-    reg [1:0]op_out;
     reg [7:0]memory[31:0];
+
+
+    //Output convenience registers
     reg [4:0]rw_num;
-    reg pc_invalid;
+    reg [1:0]op_out;
     reg data_invalid;
     reg reg_invalid;
 
-    //buses and wires
-    wire [7:0]literal;
+    //buses
+    wire [7:0]immediate;
     wire [7:0]display_bus = registers[rw_num];
-
 
 	 //7-segment display
     Console data1(rwd_1, display_bus[7:4],data_invalid);
@@ -95,9 +99,15 @@ module Microprocessor(
     assign mem_read = (op == 2'b01);
     assign reg_write = ~op[1];
     assign op = op_out;
+    assign r_symbol = 2'b11;
+    assign dp_1 = 1'b1;
+    assign dp_2 = 1'b1;
 
+
+
+    
     always @ (posedge clock or posedge reset) begin
-	 
+
 		if (reset) begin
 			//Asynchronous reset trigers a reset sequence
 
@@ -150,7 +160,7 @@ module Microprocessor(
 		end
 
 
-      else begin
+  else begin
 
       op_out <= instruction[7:6];
       //Increment PC
@@ -196,8 +206,8 @@ module Microprocessor(
 			     pc <= pc + immediate+1;
 		    end
       end
-		
-		
+
+
 	  end
 
 
