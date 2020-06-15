@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
  
 --> 
 Reading design: IMEM.prj
@@ -136,7 +136,8 @@ Performing bidirectional port resolution...
 Synthesizing Unit <IMEM>.
     Related source file is "IMEM.v".
 WARNING:Xst:647 - Input <Read_Address<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <MemByte<31:5>> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:653 - Signal <MemByte<25>> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:653 - Signal <MemByte<5>> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
     Found 32x8-bit ROM for signal <instruction>.
     Summary:
 	inferred   1 ROM(s).
@@ -174,7 +175,7 @@ Optimizing unit <IMEM> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block IMEM, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block IMEM, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -209,11 +210,11 @@ Design Statistics
 # IOs                              : 16
 
 Cell Usage :
-# BELS                             : 10
+# BELS                             : 24
 #      GND                         : 1
-#      LUT2                        : 1
-#      LUT3                        : 6
-#      LUT4                        : 2
+#      LUT3                        : 4
+#      LUT4                        : 11
+#      MUXF5                       : 8
 # IO Buffers                       : 13
 #      IBUF                        : 5
 #      OBUF                        : 8
@@ -224,8 +225,8 @@ Device utilization summary:
 
 Selected Device : 3s50antqg144-5 
 
- Number of Slices:                        5  out of    704     0%  
- Number of 4 input LUTs:                  9  out of   1408     0%  
+ Number of Slices:                        8  out of    704     1%  
+ Number of 4 input LUTs:                 15  out of   1408     1%  
  Number of IOs:                          16
  Number of bonded IOBs:                  13  out of    108    12%  
 
@@ -260,7 +261,7 @@ Speed Grade: -5
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 7.952ns
+   Maximum combinational path delay: 7.325ns
 
 Timing Detail:
 --------------
@@ -268,36 +269,36 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 43 / 7
+  Total number of paths / destination ports: 64 / 8
 -------------------------------------------------------------------------
-Delay:               7.952ns (Levels of Logic = 4)
-  Source:            Read_Address<1> (PAD)
-  Destination:       instruction<3> (PAD)
+Delay:               7.325ns (Levels of Logic = 4)
+  Source:            Read_Address<3> (PAD)
+  Destination:       instruction<7> (PAD)
 
-  Data Path: Read_Address<1> to instruction<3>
+  Data Path: Read_Address<3> to instruction<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   0.824   0.646  Read_Address_1_IBUF (Read_Address_1_IBUF)
-     LUT4:I0->O            4   0.561   0.607  Mrom_instruction211 (N2)
-     LUT3:I0->O            1   0.561   0.357  Mrom_instruction31 (instruction_3_OBUF)
-     OBUF:I->O                 4.396          instruction_3_OBUF (instruction<3>)
+     IBUF:I->O            14   0.824   0.958  Read_Address_3_IBUF (Read_Address_3_IBUF)
+     LUT4:I0->O            1   0.561   0.000  Mrom_instruction6_F (N40)
+     MUXF5:I0->O           1   0.229   0.357  Mrom_instruction6 (instruction_6_OBUF)
+     OBUF:I->O                 4.396          instruction_6_OBUF (instruction<6>)
     ----------------------------------------
-    Total                      7.952ns (6.342ns logic, 1.610ns route)
-                                       (79.8% logic, 20.2% route)
+    Total                      7.325ns (6.010ns logic, 1.315ns route)
+                                       (82.0% logic, 18.0% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 2.94 secs
+Total CPU time to Xst completion: 2.52 secs
  
 --> 
 
 
-Total memory usage is 500636 kilobytes
+Total memory usage is 500708 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 

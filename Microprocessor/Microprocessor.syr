@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: Microprocessor.prj
@@ -139,7 +139,6 @@ Module <Console> is correct for synthesis.
 =========================================================================
 
 Performing bidirectional port resolution...
-INFO:Xst:2679 - Register <pc_invalid> in unit <Microprocessor> has a constant value of 0 during circuit operation. The register is replaced by logic.
 
 Synthesizing Unit <Console>.
     Related source file is "Console.v".
@@ -149,8 +148,6 @@ Unit <Console> synthesized.
 Synthesizing Unit <Microprocessor>.
     Related source file is "Microprocessor.v".
 WARNING:Xst:646 - Signal <rw_num<4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <pc_invalid> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <literal> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <delay_4> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <delay_2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Register <reg_invalid> equivalent to <data_invalid> has been removed
@@ -161,8 +158,7 @@ WARNING:Xst:1780 - Signal <delay_2> is never used or assigned. This unconnected 
     Found 256-bit register for signal <memory>.
     Found 2-bit register for signal <op_out>.
     Found 8-bit register for signal <pc>.
-    Found 8-bit adder for signal <pc$addsub0000> created at line 196.
-    Found 8-bit adder for signal <pc$mux0000>.
+    Found 8-bit adder carry in for signal <pc$mux0000>.
     Found 32-bit register for signal <registers>.
     Found 5-bit register for signal <rw_num>.
     Found 1-bit register for signal <sec>.
@@ -171,7 +167,7 @@ INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <memory>. Y
     Summary:
 	inferred   1 Counter(s).
 	inferred  75 D-type flip-flop(s).
-	inferred   4 Adder/Subtractor(s).
+	inferred   3 Adder/Subtractor(s).
 	inferred  32 Multiplexer(s).
 Unit <Microprocessor> synthesized.
 
@@ -181,8 +177,9 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 4
- 8-bit adder                                           : 4
+# Adders/Subtractors                                   : 3
+ 8-bit adder                                           : 2
+ 8-bit adder carry in                                  : 1
 # Counters                                             : 1
  26-bit up counter                                     : 1
 # Registers                                            : 43
@@ -203,19 +200,25 @@ Macro Statistics
 WARNING:Xst:1710 - FF/Latch <rw_num_2> (without init value) has a constant value of 0 in block <Microprocessor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <rw_num_3> (without init value) has a constant value of 0 in block <Microprocessor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <rw_num_4> of sequential type is unconnected in block <Microprocessor>.
+
+Synthesizing (advanced) Unit <Microprocessor>.
+The following registers are absorbed into accumulator <pc>: 1 register on signal <pc>.
+Unit <Microprocessor> synthesized (advanced).
 WARNING:Xst:2677 - Node <rw_num_4> of sequential type is unconnected in block <Microprocessor>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 4
+# Adders/Subtractors                                   : 2
  5-bit adder                                           : 1
- 8-bit adder                                           : 3
+ 8-bit adder                                           : 1
 # Counters                                             : 1
  26-bit up counter                                     : 1
-# Registers                                            : 306
- Flip-Flops                                            : 306
+# Accumulators                                         : 1
+ 8-bit up accumulator cin                              : 1
+# Registers                                            : 298
+ Flip-Flops                                            : 298
 # Multiplexers                                         : 4
  8-bit 32-to-1 multiplexer                             : 1
  8-bit 4-to-1 multiplexer                              : 3
@@ -232,7 +235,7 @@ Optimizing unit <Microprocessor> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Microprocessor, actual ratio is 44.
+Found area constraint ratio of 100 (+ 5) on block Microprocessor, actual ratio is 43.
 FlipFlop op_out_1 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop op_out_0 has been replicated 1 time(s) to handle iob=true attribute.
 
@@ -269,20 +272,21 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 61
+# IOs                              : 63
 
 Cell Usage :
-# BELS                             : 684
+# BELS                             : 666
 #      GND                         : 1
 #      INV                         : 5
-#      LUT1                        : 32
-#      LUT2                        : 20
-#      LUT3                        : 95
-#      LUT4                        : 240
-#      LUT4_D                      : 17
-#      LUT4_L                      : 27
+#      LUT1                        : 25
+#      LUT2                        : 16
+#      LUT3                        : 92
+#      LUT3_D                      : 1
+#      LUT4                        : 246
+#      LUT4_D                      : 6
+#      LUT4_L                      : 26
 #      MUXCY                       : 39
-#      MUXF5                       : 109
+#      MUXF5                       : 110
 #      MUXF6                       : 32
 #      MUXF7                       : 16
 #      MUXF8                       : 8
@@ -298,9 +302,9 @@ Cell Usage :
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 60
+# IO Buffers                       : 62
 #      IBUF                        : 11
-#      OBUF                        : 49
+#      OBUF                        : 51
 =========================================================================
 
 Device utilization summary:
@@ -308,11 +312,11 @@ Device utilization summary:
 
 Selected Device : 3s50antqg144-5 
 
- Number of Slices:                      329  out of    704    46%  
+ Number of Slices:                      319  out of    704    45%  
  Number of Slice Flip Flops:            330  out of   1408    23%  
- Number of 4 input LUTs:                436  out of   1408    30%  
- Number of IOs:                          61
- Number of bonded IOBs:                  61  out of    108    56%  
+ Number of 4 input LUTs:                417  out of   1408    29%  
+ Number of IOs:                          63
+ Number of bonded IOBs:                  63  out of    108    58%  
     IOB Flip Flops:                       2
  Number of GCLKs:                         2  out of     24     8%  
 
@@ -359,8 +363,8 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 8.209ns (Maximum Frequency: 121.817MHz)
-   Minimum input arrival time before clock: 8.959ns
+   Minimum period: 8.078ns (Maximum Frequency: 123.800MHz)
+   Minimum input arrival time before clock: 8.827ns
    Maximum output required time after clock: 8.853ns
    Maximum combinational path delay: 6.878ns
 
@@ -385,7 +389,7 @@ Delay:               4.845ns (Levels of Logic = 3)
     ----------------------------------------  ------------
      FDR:C->Q              2   0.495   0.488  delay_1 (delay_1)
      LUT4:I0->O            1   0.561   0.465  delay_cmp_eq00001121 (delay_cmp_eq0000112)
-     LUT4_D:I0->LO         1   0.561   0.208  delay_cmp_eq0000164 (N202)
+     LUT4_D:I0->LO         1   0.561   0.208  delay_cmp_eq0000164 (N265)
      LUT4:I0->O           26   0.561   1.071  delay_cmp_eq000035 (delay_cmp_eq0000)
      FDR:R                     0.435          delay_0
     ----------------------------------------
@@ -394,32 +398,32 @@ Delay:               4.845ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_OBUF1'
-  Clock period: 8.209ns (frequency: 121.817MHz)
-  Total number of paths / destination ports: 26522 / 554
+  Clock period: 8.078ns (frequency: 123.800MHz)
+  Total number of paths / destination ports: 29858 / 554
 -------------------------------------------------------------------------
-Delay:               8.209ns (Levels of Logic = 8)
+Delay:               8.078ns (Levels of Logic = 8)
   Source:            registers_0_0 (FF)
-  Destination:       registers_0_7 (FF)
+  Destination:       registers_0_0 (FF)
   Source Clock:      clock_OBUF1 rising
   Destination Clock: clock_OBUF1 rising
 
-  Data Path: registers_0_0 to registers_0_7
+  Data Path: registers_0_0 to registers_0_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              4   0.495   0.565  registers_0_0 (registers_0_0)
-     LUT3:I1->O            1   0.562   0.000  Mmux__COND_5_2_f5_F (N156)
-     MUXF5:I0->O         134   0.229   1.102  Mmux__COND_5_2_f5 (_COND_5<0>)
-     LUT4_D:I3->LO         1   0.561   0.166  Madd__COND_7_Madd_cy<2>11_1 (N218)
-     LUT2:I1->O           16   0.562   0.879  Madd__COND_7_Madd_xor<3>11 (_COND_7<3>)
-     MUXF7:S->O            1   0.649   0.000  Mmux__COND_8_3_f7_6 (Mmux__COND_8_3_f77)
-     MUXF8:I1->O           4   0.239   0.501  Mmux__COND_8_2_f8_6 (_COND_8<7>)
-     LUT4:I3->O            1   0.561   0.380  registers_2_mux0000<7>_SW0_SW0 (N128)
-     LUT3:I2->O            1   0.561   0.000  registers_2_mux0000<7> (registers_2_mux0000<7>)
-     FDC:D                     0.197          registers_2_7
+     LUT3:I1->O            1   0.562   0.000  Mmux__COND_5_2_f5_F (N197)
+     MUXF5:I0->O         136   0.229   1.103  Mmux__COND_5_2_f5 (_COND_5<0>)
+     LUT4:I3->O            4   0.561   0.522  Madd__COND_7_Madd_cy<1>11 (Madd__COND_7_Madd_cy<1>)
+     LUT3:I2->O           32   0.561   1.073  Madd__COND_7_Madd_xor<2>11_1 (Madd__COND_7_Madd_xor<2>11)
+     MUXF6:S->O            1   0.649   0.000  Mmux__COND_8_6_f6_6 (Mmux__COND_8_6_f67)
+     MUXF7:I0->O           1   0.239   0.000  Mmux__COND_8_4_f7_6 (Mmux__COND_8_4_f77)
+     MUXF8:I0->O           4   0.239   0.522  Mmux__COND_8_2_f8_6 (_COND_8<7>)
+     LUT3:I2->O            1   0.561   0.000  registers_3_mux0000<7> (registers_3_mux0000<7>)
+     FDC:D                     0.197          registers_3_7
     ----------------------------------------
-    Total                      8.209ns (4.616ns logic, 3.593ns route)
-                                       (56.2% logic, 43.8% route)
+    Total                      8.078ns (4.293ns logic, 3.785ns route)
+                                       (53.1% logic, 46.9% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'sec'
@@ -465,30 +469,30 @@ Delay:               1.381ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_OBUF1'
-  Total number of paths / destination ports: 22359 / 565
+  Total number of paths / destination ports: 27751 / 565
 -------------------------------------------------------------------------
-Offset:              8.959ns (Levels of Logic = 9)
+Offset:              8.827ns (Levels of Logic = 9)
   Source:            instruction<4> (PAD)
-  Destination:       registers_0_7 (FF)
+  Destination:       registers_0_0 (FF)
   Destination Clock: clock_OBUF1 rising
 
-  Data Path: instruction<4> to registers_0_7
+  Data Path: instruction<4> to registers_0_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            16   0.824   0.987  instruction_4_IBUF (instruction_4_IBUF)
-     LUT3:I0->O            1   0.561   0.000  Mmux__COND_5_2_f5_F (N156)
-     MUXF5:I0->O         134   0.229   1.102  Mmux__COND_5_2_f5 (_COND_5<0>)
-     LUT4_D:I3->LO         1   0.561   0.166  Madd__COND_7_Madd_cy<2>11_1 (N218)
-     LUT2:I1->O           16   0.562   0.879  Madd__COND_7_Madd_xor<3>11 (_COND_7<3>)
-     MUXF7:S->O            1   0.649   0.000  Mmux__COND_8_3_f7_6 (Mmux__COND_8_3_f77)
-     MUXF8:I1->O           4   0.239   0.501  Mmux__COND_8_2_f8_6 (_COND_8<7>)
-     LUT4:I3->O            1   0.561   0.380  registers_2_mux0000<7>_SW0_SW0 (N128)
-     LUT3:I2->O            1   0.561   0.000  registers_2_mux0000<7> (registers_2_mux0000<7>)
-     FDC:D                     0.197          registers_2_7
+     LUT3:I0->O            1   0.561   0.000  Mmux__COND_5_2_f5_F (N197)
+     MUXF5:I0->O         136   0.229   1.103  Mmux__COND_5_2_f5 (_COND_5<0>)
+     LUT4:I3->O            4   0.561   0.522  Madd__COND_7_Madd_cy<1>11 (Madd__COND_7_Madd_cy<1>)
+     LUT3:I2->O           32   0.561   1.073  Madd__COND_7_Madd_xor<2>11_1 (Madd__COND_7_Madd_xor<2>11)
+     MUXF6:S->O            1   0.649   0.000  Mmux__COND_8_6_f6_6 (Mmux__COND_8_6_f67)
+     MUXF7:I0->O           1   0.239   0.000  Mmux__COND_8_4_f7_6 (Mmux__COND_8_4_f77)
+     MUXF8:I0->O           4   0.239   0.522  Mmux__COND_8_2_f8_6 (_COND_8<7>)
+     LUT3:I2->O            1   0.561   0.000  registers_3_mux0000<7> (registers_3_mux0000<7>)
+     FDC:D                     0.197          registers_3_7
     ----------------------------------------
-    Total                      8.959ns (4.944ns logic, 4.015ns route)
-                                       (55.2% logic, 44.8% route)
+    Total                      8.827ns (4.621ns logic, 4.206ns route)
+                                       (52.3% logic, 47.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'two_sec'
@@ -599,14 +603,14 @@ Delay:               6.878ns (Levels of Logic = 4)
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.19 secs
+Total CPU time to Xst completion: 4.10 secs
  
 --> 
 
 
-Total memory usage is 514416 kilobytes
+Total memory usage is 514212 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   12 (   0 filtered)
-Number of infos    :    5 (   0 filtered)
+Number of warnings :   10 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

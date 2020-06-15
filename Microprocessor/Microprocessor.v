@@ -23,8 +23,6 @@ module Microprocessor(
     output mem_write,
     output mem_read,
     output reg_write,
-    output dp_1;
-    output dp_2;
     output [1:0]op,
     output [6:0]reg_num,
     output [6:0]pc_high,
@@ -32,7 +30,7 @@ module Microprocessor(
     output [7:0]instruction_address,
     output [6:0]rwd_1,
     output [6:0]rwd_0,
-    output [1:0]r_symbol;
+    output [1:0]r_symbol,
     input frequency_2,
     input frequency_4,
     input oscillator,
@@ -100,11 +98,6 @@ module Microprocessor(
     assign reg_write = ~op[1];
     assign op = op_out;
     assign r_symbol = 2'b11;
-    assign dp_1 = 1'b1;
-    assign dp_2 = 1'b1;
-
-
-
     
     always @ (posedge clock or posedge reset) begin
 
@@ -113,7 +106,6 @@ module Microprocessor(
 
 			//reset pc
 			pc <= 8'd0;
-			pc_invalid <= 1'b0;
 			data_invalid <= 1'b1;
 			reg_invalid <= 1'b1;
 

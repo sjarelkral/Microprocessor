@@ -1,61 +1,10 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
-# Start of session at: Fri Jun 12 21:09:22 2020
-# Process ID: 11828
+# Start of session at: Mon Jun 15 21:44:58 2020
+# Process ID: 6337
 # Log file: /csehome/sjarelkral/Work/Microprocessor/Microprocessor/planAhead_run_1/planAhead.log
 # Journal file: /csehome/sjarelkral/Work/Microprocessor/Microprocessor/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
 start_gui
 source /csehome/sjarelkral/Work/Microprocessor/Microprocessor/pa.fromNetlist.tcl
-startgroup
-set_property package_pin P76 [get_ports {pc_high[6]}]
-endgroup
-set_property package_pin "" [get_ports [list  {pc_high[4]}]]
-startgroup
-set_property package_pin P75 [get_ports {pc_high[5]}]
-endgroup
-startgroup
-set_property package_pin P72 [get_ports {pc_high[4]}]
-endgroup
-startgroup
-set_property package_pin P71 [get_ports {pc_high[3]}]
-endgroup
-startgroup
-set_property package_pin P70 [get_ports {pc_high[2]}]
-endgroup
-startgroup
-set_property package_pin P76 [get_ports {pc_high[6]}]
-endgroup
-startgroup
-set_property package_pin P69 [get_ports {pc_high[1]}]
-endgroup
-startgroup
-set_property package_pin P68 [get_ports {pc_high[0]}]
-endgroup
-set_property package_pin "" [get_ports [list  {pc_low[6]}]]
-startgroup
-set_property package_pin P85 [get_ports {pc_low[6]}]
-endgroup
-startgroup
-set_property package_pin P84 [get_ports {pc_low[5]}]
-endgroup
-startgroup
-set_property package_pin P83 [get_ports {pc_low[4]}]
-endgroup
-startgroup
-set_property package_pin P82 [get_ports {pc_low[3]}]
-endgroup
-startgroup
-set_property package_pin P79 [get_ports {pc_low[2]}]
-endgroup
-startgroup
-set_property package_pin P78 [get_ports {pc_low[1]}]
-endgroup
-startgroup
-set_property package_pin P77 [get_ports {pc_low[0]}]
-endgroup
-startgroup
-set_property package_pin P83 [get_ports {pc_low[4]}]
-endgroup
-save_constraints

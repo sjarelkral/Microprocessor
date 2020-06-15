@@ -1,12 +1,10 @@
-
-
-NET "reg_num[6]" LOC = P29;
-NET "reg_num[5]" LOC = P28;
-NET "reg_num[4]" LOC = P27;
-NET "reg_num[3]" LOC = P25;
-NET "reg_num[1]" LOC = P21;
-NET "reg_num[2]" LOC = P24;
-NET "reg_num[0]" LOC = P20;
+NET "reg_num[6]" LOC = P19;
+NET "reg_num[5]" LOC = P18;
+NET "reg_num[4]" LOC = P16;
+NET "reg_num[3]" LOC = P15;
+NET "reg_num[1]" LOC = P12;
+NET "reg_num[2]" LOC = P13;
+NET "reg_num[0]" LOC = P11;
 NET "clock" LOC = P87;
 NET "oscillator" LOC = P57;
 NET "reset" LOC = P47;
@@ -15,20 +13,19 @@ NET "mem_write" LOC = P93;
 NET "reg_write" LOC = P91;
 NET "op[1]" LOC = P88;
 NET "op[0]" LOC = P90;
-NET "rwd_0[6]" LOC = P19;
-NET "rwd_0[5]" LOC = P18;
-NET "rwd_0[4]" LOC = P16;
-NET "rwd_0[3]" LOC = P15;
-NET "rwd_0[2]" LOC = P13;
-NET "rwd_0[1]" LOC = P12;
-NET "rwd_0[0]" LOC = P11;
-NET "rwd_1[6]" LOC = P10;
-NET "rwd_1[5]" LOC = P8;
-NET "rwd_1[4]" LOC = P7;
-NET "rwd_1[3]" LOC = P6;
-NET "rwd_1[2]" LOC = P5;
-NET "rwd_1[1]" LOC = P4;
-NET "rwd_1[0]" LOC = P3;
+NET "rwd_0[6]" LOC = P64;
+NET "rwd_0[5]" LOC = P63;
+NET "rwd_0[4]" LOC = P62;
+NET "rwd_0[3]" LOC = P60;
+NET "rwd_0[1]" LOC = P58;
+NET "rwd_0[0]" LOC = P55;
+NET "rwd_1[6]" LOC = P29;
+NET "rwd_1[5]" LOC = P28;
+NET "rwd_1[4]" LOC = P27;
+NET "rwd_1[3]" LOC = P25;
+NET "rwd_1[2]" LOC = P24;
+NET "rwd_1[1]" LOC = P21;
+NET "rwd_1[0]" LOC = P20;
 NET "instruction_address[7]" LOC = P105;
 NET "instruction_address[6]" LOC = P104;
 NET "instruction_address[5]" LOC = P103;
@@ -47,10 +44,9 @@ NET "instruction[1]" LOC = P121;
 NET "instruction[0]" LOC = P120;
 
 
-NET "frequency_2" LOC = P48;
-NET "frequency_4" LOC = P49;
+NET "frequency_2" LOC = P31;
+NET "frequency_4" LOC = P33;
 
-# PlanAhead Generated physical constraints 
 
 NET "pc_high[5]" LOC = P75;
 NET "pc_high[4]" LOC = P72;
@@ -66,3 +62,10 @@ NET "pc_low[2]" LOC = P79;
 NET "pc_low[1]" LOC = P78;
 NET "pc_low[0]" LOC = P77;
 NET "pc_low[4]" LOC = P83;
+
+
+NET "rwd_0[2]" LOC = P59;
+NET "r_symbol[1]" LOC = P10;
+NET "r_symbol[0]" LOC = P7;
+
+# PlanAhead Generated physical constraints

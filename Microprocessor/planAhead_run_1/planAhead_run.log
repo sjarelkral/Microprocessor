@@ -5,7 +5,7 @@
 
 INFO: [Common 17-78] Attempting to get a license: PlanAhead
 INFO: [Common 17-290] Got license for PlanAhead
-INFO: [Common 17-86] Your PlanAhead license expires in -1534 day(s)
+INFO: [Common 17-86] Your PlanAhead license expires in -1537 day(s)
 INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
 Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
@@ -34,16 +34,9 @@ WARNING:NetListWriters:298 - No output is written to Microprocessor.xncf,
 Processing design ...
    Preping design's networks ...
    Preping design's macros ...
-WARNING:NetListWriters:306 - Signal bus Madd_pc_mux0000_cy<3 : 0> on block
-   Microprocessor is not reconstructed, because there are some missing bus
-   signals.
-WARNING:NetListWriters:306 - Signal bus _COND_4<7 : 0> on block Microprocessor
-   is not reconstructed, because there are some missing bus signals.
-WARNING:NetListWriters:306 - Signal bus ir<7 : 0> on block Microprocessor is not
-   reconstructed, because there are some missing bus signals.
   finished :Prep
 Writing EDIF netlist file Microprocessor.edif ...
-ngc2edif: Total memory usage is 93596 kilobytes
+ngc2edif: Total memory usage is 93604 kilobytes
 
 Parsing EDIF File [./planAhead_run_1/Microprocessor.data/cache/Microprocessor_ngc_8dfefed0.edif]
 Finished Parsing EDIF File [./planAhead_run_1/Microprocessor.data/cache/Microprocessor_ngc_8dfefed0.edif]
@@ -60,63 +53,14 @@ Loading list of drcs for the architecture : /opt/Xilinx/14.7/ISE_DS/PlanAhead/da
 INFO: [Timing 38-77] Reading timing library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/spartan3a-5.lib.
 INFO: [Timing 38-34] Done reading timing library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3a/spartan3a/spartan3a-5.lib.
 Parsing UCF File [/csehome/sjarelkral/Work/Microprocessor/Microprocessor/Microprocessor.ucf]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'dp_1' [/csehome/sjarelkral/Work/Microprocessor/Microprocessor/Microprocessor.ucf:75]
 Finished Parsing UCF File [/csehome/sjarelkral/Work/Microprocessor/Microprocessor/Microprocessor.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Phase 0 | Netlist Checksum: cd02a618
-startgroup
-set_property package_pin P76 [get_ports {pc_high[6]}]
-endgroup
-set_property package_pin "" [get_ports [list  {pc_high[4]}]]
-startgroup
-set_property package_pin P75 [get_ports {pc_high[5]}]
-endgroup
-startgroup
-set_property package_pin P72 [get_ports {pc_high[4]}]
-endgroup
-startgroup
-set_property package_pin P71 [get_ports {pc_high[3]}]
-endgroup
-startgroup
-set_property package_pin P70 [get_ports {pc_high[2]}]
-endgroup
-startgroup
-set_property package_pin P76 [get_ports {pc_high[6]}]
-endgroup
-startgroup
-set_property package_pin P69 [get_ports {pc_high[1]}]
-endgroup
-startgroup
-set_property package_pin P68 [get_ports {pc_high[0]}]
-endgroup
-set_property package_pin "" [get_ports [list  {pc_low[6]}]]
-startgroup
-set_property package_pin P85 [get_ports {pc_low[6]}]
-endgroup
-startgroup
-set_property package_pin P84 [get_ports {pc_low[5]}]
-endgroup
-startgroup
-set_property package_pin P83 [get_ports {pc_low[4]}]
-endgroup
-startgroup
-set_property package_pin P82 [get_ports {pc_low[3]}]
-endgroup
-startgroup
-set_property package_pin P79 [get_ports {pc_low[2]}]
-endgroup
-startgroup
-set_property package_pin P78 [get_ports {pc_low[1]}]
-endgroup
-startgroup
-set_property package_pin P77 [get_ports {pc_low[0]}]
-endgroup
-startgroup
-set_property package_pin P83 [get_ports {pc_low[4]}]
-endgroup
-save_constraints
+Phase 0 | Netlist Checksum: fad10f77
 exit
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Fri Jun 12 21:12:19 2020...
+INFO: [Common 17-206] Exiting PlanAhead at Mon Jun 15 21:45:44 2020...
 INFO: [Common 17-83] Releasing license: PlanAhead
