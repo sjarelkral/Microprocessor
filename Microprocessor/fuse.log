@@ -11,7 +11,7 @@ Starting static elaboration
 WARNING:HDLCompiler:189 - "/csehome/sjarelkral/Work/Microprocessor/Microprocessor/Microprocessor.v" Line 93: Size mismatch in connection of port <hex>. Formal port size is 4-bit while actual signal size is 5-bit.
 Completed static elaboration
 Fuse Memory Usage: 82916 KB
-Fuse CPU Usage: 880 ms
+Fuse CPU Usage: 800 ms
 Compiling module Console
 Compiling module Microprocessor
 Compiling module test
@@ -21,5 +21,5 @@ Waiting for 1 sub-compilation(s) to finish...
 Compiled 4 Verilog Units
 Built simulation executable /csehome/sjarelkral/Work/Microprocessor/Microprocessor/test_isim_beh.exe
 Fuse Memory Usage: 1167656 KB
-Fuse CPU Usage: 900 ms
-GCC CPU Usage: 320 ms
+Fuse CPU Usage: 810 ms
+GCC CPU Usage: 340 ms
