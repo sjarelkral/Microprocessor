@@ -52,7 +52,15 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
    ```
    * Clock for the processor is obtained using an embedded `frequency divider` which uses a delay technique to generate parallel slower clocks. Furthermore, a desired clock is selected based on the frequency input values.
    ```verilog
-   always @(posedge oscillator)begin
+  //Frequency dividers : Generate 1 Hz clock (output LED, internal input for components)
+    reg [25:0] delay;
+    reg delay_2;
+    reg delay_4;
+    reg sec;
+    reg two_sec;
+    reg four_sec;
+
+    always @(posedge oscillator)begin
     	delay  <= (delay == 25000000)?26'd0:(delay+1);
     	if (delay == 26'd0)begin
     		sec <= ~sec;
