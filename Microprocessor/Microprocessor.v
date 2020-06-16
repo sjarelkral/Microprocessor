@@ -38,7 +38,7 @@ module Microprocessor(
     input [7:0]instruction
     );
 
-    /*//Frequency divider section
+    //Frequency divider section
     reg [25:0] delay;
     reg delay_2;
     reg delay_4;
@@ -64,10 +64,6 @@ module Microprocessor(
     assign clock = frequency_4 ? four_sec:
                     frequency_2 ? two_sec :
                     sec;
-*/
-
-
-		assign clock = oscillator;
 
     //Memory and Registers section
     reg [7:0]registers[3:0];
@@ -102,7 +98,7 @@ module Microprocessor(
     assign reg_write = ~op[1];
     assign op = op_out;
     assign r_symbol = 2'b11;
-    
+
     always @ (posedge clock or posedge reset) begin
 
 		if (reset) begin
