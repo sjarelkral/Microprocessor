@@ -153,7 +153,7 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
    ```
 ## Microprocessor Design
 ### Data Path
-![Microprocessor - Data path](https://github.com/sjarelkral/Microprocessor/blob/master/photos/Data%20Path.JPG)
+![Microprocessor - Data path](photos/Data%20Path.JPG)
 ### Instruction Set Architecture
 
 #### Formats of the entire instruction set
