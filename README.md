@@ -33,8 +33,8 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
    * The ALU, control unit, system memory, frequency divider, pc and registers are condensed into a behavioural description of `Microprocessor` module. This module is responsible for all the external inputs and output and forms the core part of the project. 
    ``` verilog
    module Microprocessor(
-    output clock,	
-    output mem_write,			
+    output clock,
+    output mem_write,
     output mem_read,
     output reg_write,
     output [1:0]op,
@@ -44,6 +44,7 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
     output [7:0]instruction_address,
     output [6:0]rwd_1,
     output [6:0]rwd_0,
+    output [1:0]r_symbol,
     input frequency_2,
     input frequency_4,
     input oscillator,
