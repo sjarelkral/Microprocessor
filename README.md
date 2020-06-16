@@ -134,14 +134,13 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
     input [3:0]hex
    );
    ```
-   ```verilog
+   ```verilog module Console
    	 //7-segment display
-    Console data1(rwd_1, display_bus[7:4]);
-    Console data0(rwd_0, display_bus[3:0]);
-    Console  pc_counter_high(pc_high, pc[7:4]);
-    Console  pc_counter_low(pc_low, pc[3:0]);
-    Console reg_num_(reg_num, rw_num);
-
+    Console data1(rwd_1, display_bus[7:4],data_invalid);
+    Console data0(rwd_0, display_bus[3:0],data_invalid);
+    Console  pc_counter_high(pc_high, pc[7:4],1'b0);
+    Console  pc_counter_low(pc_low, pc[3:0], 1'b0);
+    Console reg_num_(reg_num, rw_num,reg_invalid);
    ```
 * **IMEM** : 
    * `IMEM` module is a write once read many times instruction memory. It gets an 8-bit instruction address and gives an 8-bit instruction.
