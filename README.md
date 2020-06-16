@@ -155,7 +155,7 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
 ### Data Path
 ![Microprocessor - Data path](photos/Data%20Path.JPG)
 ### Instruction Set Architecture
-
+![Microprocessor - Instruction Set Architecture](/photos/ISA.JPG)
 #### Formats of the entire instruction set
 #### Control Signals
 * Most of the control signals in the Microprocessor design were not explicitly implemented in the behavioral description model as they are automatically generated in the conditional blocks and in the use of appropriate variables.
