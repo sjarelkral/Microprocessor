@@ -81,7 +81,7 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
                     frequency_2 ? two_sec :
                     sec;
    ```
-   * The main part of the sequential circuit description is an always block that is triggered by the positive edge of the `clock` and an asynchronous `reset` input .The latter resets the registers, memory and the pc to their default values when asserted.
+   * The main part of the sequential circuit description is an always block that is triggered by the positive edge of the `clock` and an asynchronous `reset` input .The latter asynchronously resets the registers, memory and the pc to their default values when asserted.
    ```verilog
    always @ (posedge clock or posedge reset) begin
    
@@ -144,7 +144,7 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
    Console reg_num_(reg_num, rw_num,reg_invalid);
    ```
 * **IMEM** : 
-   * `IMEM` module is a write once read many times instruction memory. It gets an 8-bit instruction address and gives an 8-bit instruction.
+   * `IMEM` module is a write once read many times instruction memory. It gets an 8-bit instruction address and returns an 8-bit machine instruction code.
    ```verilog
    module IMEM(
     output [7:0] instruction,
