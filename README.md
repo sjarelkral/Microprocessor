@@ -129,18 +129,19 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
 * **Console** :
    * `Console` module is a 4-bit Hexadecimal to 7-segment display converter. This module is a data-flow style description that asserts or deasserts 7 output wires based on the values of 4 input lines. It forms a part of the `Microprocessor` module where it encoded Hexadecimal output to 7-segment display to provide user with external output.
    ```verilog
-   module Console(
+   odule Console(
     output [6:0]sseg,
-    input [3:0]hex
-   );
+    input [3:0]hex,
+	 input n_valid //Generate "-" invalid input indicator
+    );
    ```
-   ```verilog module Console
-   	 //7-segment display
-    Console data1(rwd_1, display_bus[7:4],data_invalid);
-    Console data0(rwd_0, display_bus[3:0],data_invalid);
-    Console  pc_counter_high(pc_high, pc[7:4],1'b0);
-    Console  pc_counter_low(pc_low, pc[3:0], 1'b0);
-    Console reg_num_(reg_num, rw_num,reg_invalid);
+   ```verilog
+   //7-segment display
+   Console data1(rwd_1, display_bus[7:4],data_invalid);
+   Console data0(rwd_0, display_bus[3:0],data_invalid);
+   Console  pc_counter_high(pc_high, pc[7:4],1'b0);
+   Console  pc_counter_low(pc_low, pc[3:0], 1'b0);
+   Console reg_num_(reg_num, rw_num,reg_invalid);
    ```
 * **IMEM** : 
    * `IMEM` module is a write once read many times instruction memory. It gets an 8-bit instruction address and gives an 8-bit instruction.
