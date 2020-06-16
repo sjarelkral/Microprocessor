@@ -181,3 +181,5 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
 ![Interface of Microprocessor Components](photos/Interface%20of%20Microprocessor%20Components.jpeg)
 ## Simulation and Testing
 ![Testbench Simulation](photos/Testbench%20Simulation.png)
+![FPGA Implementation](/photos/FPGA%20Implementation.png)
+
