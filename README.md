@@ -178,6 +178,7 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
    * Initial values are: `[0]0, [1]1, ... , [15]15, [16]0, [17]-1, ... ,[31]-15`
 * **Output 7-segment Display**
    * Two segment displays the contents of the Register for `RegWriteData` in hexadecimal. Additional output LEDs and displays are used for additional outputs.
-* ****
+![Testbench Simulation](photos/Interface%20of%20Microprocessor%20Components.jpeg)
+* ****) 
 ## Simulation and Testing
 ![Testbench Simulation](photos/Testbench%20Simulation.png)
