@@ -21,10 +21,10 @@
 module Console(
     output [6:0]sseg,
     input [3:0]hex,
-	 input n_valid
+	 input n_valid  //Generate "-" invalid input indicator
     );
     assign sseg = (n_valid) ? 7'b1000000:
-						(hex == 4'd0) ? 7'b0111111 : 
+						(hex == 4'd0) ? 7'b0111111 :
 						(hex == 4'd1) ? 7'b0000110 :
 						(hex == 4'd2) ? 7'b1011011 :
 						(hex == 4'd3) ? 7'b1001111:
