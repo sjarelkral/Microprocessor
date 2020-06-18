@@ -68,6 +68,9 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_1"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_2"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_3"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_4"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
@@ -122,11 +125,11 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1592458192" xil_pn:in_ck="3213382812852" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="123229027434610922" xil_pn:start_ts="1592458192">
+    <transform xil_pn:end_ts="1592467046" xil_pn:in_ck="3213382812852" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="123229027434610922" xil_pn:start_ts="1592467046">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1592459358" xil_pn:in_ck="6100315822235089442" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="2266018594723134670" xil_pn:start_ts="1592459355">
+    <transform xil_pn:end_ts="1592467049" xil_pn:in_ck="6100315822235089442" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="2266018594723134670" xil_pn:start_ts="1592467046">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="IMEM.bld"/>
@@ -135,12 +138,10 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1592459361" xil_pn:in_ck="6100317228643707683" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-7298783698718769783" xil_pn:start_ts="1592459358">
+    <transform xil_pn:end_ts="1592467052" xil_pn:in_ck="6100317228643707683" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-7298783698718769783" xil_pn:start_ts="1592467049">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="IMEM.pcf"/>
       <outfile xil_pn:name="IMEM_map.map"/>
       <outfile xil_pn:name="IMEM_map.mrp"/>
@@ -151,7 +152,7 @@
       <outfile xil_pn:name="IMEM_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1592459366" xil_pn:in_ck="3927450460634908860" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-3620386074766820064" xil_pn:start_ts="1592459361">
+    <transform xil_pn:end_ts="1592467057" xil_pn:in_ck="3927450460634908860" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-3620386074766820064" xil_pn:start_ts="1592467052">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -166,7 +167,7 @@
       <outfile xil_pn:name="IMEM_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1592459369" xil_pn:in_ck="3213382805227" xil_pn:name="TRANEXT_bitFile_spartan3a" xil_pn:prop_ck="8242823369169169445" xil_pn:start_ts="1592459366">
+    <transform xil_pn:end_ts="1592467061" xil_pn:in_ck="3213382805227" xil_pn:name="TRANEXT_bitFile_spartan3a" xil_pn:prop_ck="8242823369169169445" xil_pn:start_ts="1592467057">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -179,11 +180,11 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1592460839" xil_pn:in_ck="3213382792373" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="3725548802311211136" xil_pn:start_ts="1592460837">
+    <transform xil_pn:end_ts="1592467062" xil_pn:in_ck="3213382792373" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="3725548802311211136" xil_pn:start_ts="1592467061">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1592459366" xil_pn:in_ck="6100131582706099871" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1592459364">
+    <transform xil_pn:end_ts="1592467057" xil_pn:in_ck="6100131582706099871" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1592467055">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="IMEM.twr"/>

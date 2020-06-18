@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (lin64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Thu Jun 18 14:49:24 2020
+#Thu Jun 18 16:57:35 2020
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -115,8 +115,8 @@ P93,,DIFFSLR,IO_L07N_1/RHCLK7,UNUSED,,1,,,,,,,,,
 P94,,,VCCINT,,,,,,,,1.2,,,,
 P95,,,VCCO_1,,,1,,,,,2.50,,,,
 P96,Read_Address<0>,IBUF,IO_L08P_1,INPUT,LVCMOS25*,1,,,,IBUF,,LOCATED,NO,NONE,
-P97,Read_Address<1>,IBUF,IP_1/VREF_1,INPUT,LVCMOS25*,1,,,,IBUF,,LOCATED,NO,NONE,
-P98,,DIFFSLR,IO_L08N_1,UNUSED,,1,,,,,,,,,
+P97,,DIFFMI_NDT,IP_1/VREF_1,UNUSED,,1,,,,,,,,,
+P98,Read_Address<1>,IBUF,IO_L08N_1,INPUT,LVCMOS25*,1,,,,IBUF,,LOCATED,NO,NONE,
 P99,Read_Address<2>,IBUF,IO_L09P_1,INPUT,LVCMOS25*,1,,,,IBUF,,LOCATED,NO,NONE,
 P100,,,GND,,,,,,,,,,,,
 P101,Read_Address<3>,IBUF,IO_L09N_1,INPUT,LVCMOS25*,1,,,,IBUF,,LOCATED,NO,NONE,
