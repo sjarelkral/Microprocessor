@@ -71,7 +71,7 @@ Automatic Register Balancing       : No
 
 ---- Target Options
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 100000
+Global Maximum Fanout              : 500
 Add Generic Clock Buffer(BUFG)     : 24
 Register Duplication               : YES
 Slice Packing                      : YES
@@ -602,13 +602,13 @@ Delay:               6.878ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.10 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.28 secs
  
 --> 
 
 
-Total memory usage is 514212 kilobytes
+Total memory usage is 514180 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   10 (   0 filtered)

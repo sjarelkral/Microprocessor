@@ -1,4 +1,0 @@
-verilog work "Console.v"
-verilog work "Microprocessor.v"
-verilog work "test.v"
-verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

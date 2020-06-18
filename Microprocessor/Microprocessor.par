@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-310-2-07::  Mon Jun 15 21:48:49 2020
+310-2-08::  Thu Jun 18 14:23:56 2020
 
 par -w -intstyle ise -ol high -t 1 Microprocessor_map.ncd Microprocessor.ncd
 Microprocessor.pcf 
@@ -72,13 +72,13 @@ Phase 3.31  Local Placement Optimization (Checksum:d2519dc0) REAL time: 1 secs
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:df9c320b) REAL time: 1 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:df9c320b) REAL time: 2 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:df9c320b) REAL time: 1 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:df9c320b) REAL time: 2 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:df9c320b) REAL time: 1 secs 
+Phase 6.36  Local Placement Optimization (Checksum:df9c320b) REAL time: 2 secs 
 
 Phase 7.8  Global Placement
 ..................................................
@@ -120,26 +120,26 @@ Updating file: Microprocessor.ncd with current fully routed design.
 
 Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 17 secs 
 
 Updating file: Microprocessor.ncd with current fully routed design.
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
 
-Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
+Phase 11  : 0 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
 
-Phase 12  : 0 unrouted; (Par is working to improve performance)     REAL time: 19 secs 
+Phase 12  : 0 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
 WARNING:Route:455 - CLK Net:sec may have excessive skew because 
       1 CLK pins and 3 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:two_sec may have excessive skew because 
       1 CLK pins and 2 NON_CLK pins failed to route using a CLK template.
 
-Total REAL time to Router completion: 19 secs 
-Total CPU time to Router completion: 19 secs 
+Total REAL time to Router completion: 18 secs 
+Total CPU time to Router completion: 18 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -209,8 +209,8 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 20 secs 
-Total CPU time to PAR completion: 20 secs 
+Total REAL time to PAR completion: 18 secs 
+Total CPU time to PAR completion: 18 secs 
 
 Peak Memory Usage:  572 MB
 

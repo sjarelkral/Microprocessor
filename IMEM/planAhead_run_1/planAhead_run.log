@@ -5,7 +5,7 @@
 
 INFO: [Common 17-78] Attempting to get a license: PlanAhead
 INFO: [Common 17-290] Got license for PlanAhead
-INFO: [Common 17-86] Your PlanAhead license expires in -1533 day(s)
+INFO: [Common 17-86] Your PlanAhead license expires in -1540 day(s)
 INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
 Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
@@ -35,7 +35,7 @@ Processing design ...
    Preping design's macros ...
   finished :Prep
 Writing EDIF netlist file IMEM.edif ...
-ngc2edif: Total memory usage is 91916 kilobytes
+ngc2edif: Total memory usage is 91948 kilobytes
 
 Parsing EDIF File [./planAhead_run_1/IMEM.data/cache/IMEM_ngc_4b924b6.edif]
 Finished Parsing EDIF File [./planAhead_run_1/IMEM.data/cache/IMEM_ngc_4b924b6.edif]
@@ -55,9 +55,12 @@ Finished Parsing UCF File [/csehome/sjarelkral/Work/Microprocessor/IMEM/IMEM.ucf
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Phase 0 | Netlist Checksum: 765e11e5
+Phase 0 | Netlist Checksum: 659e2ace
 startgroup
 set_property package_pin P130 [get_ports {instruction[7]}]
+endgroup
+startgroup
+set_property package_pin P120 [get_ports {instruction[0]}]
 endgroup
 startgroup
 set_property package_pin P129 [get_ports {instruction[6]}]
@@ -78,13 +81,29 @@ startgroup
 set_property package_pin P121 [get_ports {instruction[1]}]
 endgroup
 startgroup
-set_property package_pin P120 [get_ports {instruction[0]}]
-endgroup
-startgroup
 set_property package_pin P105 [get_ports {Read_Address[7]}]
 endgroup
 startgroup
-set_property package_pin P104 [get_ports {Read_Address[6]}]
+set_property package_pin P96 [get_ports {Read_Address[0]}]
+endgroup
+startgroup
+set_property package_pin P97 [get_ports {Read_Address[1]}]
+endgroup
+startgroup
+set_property package_pin P99 [get_ports {Read_Address[2]}]
+endgroup
+set_property package_pin "" [get_ports [list  {Read_Address[3]}]]
+startgroup
+set_property package_pin P98 [get_ports {Read_Address[2]}]
+endgroup
+startgroup
+set_property package_pin P99 [get_ports {Read_Address[3]}]
+endgroup
+startgroup
+set_property package_pin P101 [get_ports {Read_Address[4]}]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports {Read_Address[5]}]
 endgroup
 startgroup
 set_property package_pin P104 [get_ports {Read_Address[6]}]
@@ -98,18 +117,11 @@ endgroup
 startgroup
 set_property package_pin P101 [get_ports {Read_Address[3]}]
 endgroup
-set_property package_pin "" [get_ports [list  {Read_Address[1]}]]
 startgroup
 set_property package_pin P99 [get_ports {Read_Address[2]}]
-endgroup
-startgroup
-set_property package_pin P98 [get_ports {Read_Address[1]}]
-endgroup
-startgroup
-set_property package_pin P96 [get_ports {Read_Address[0]}]
 endgroup
 save_constraints
 exit
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Thu Jun 11 23:22:07 2020...
+INFO: [Common 17-206] Exiting PlanAhead at Thu Jun 18 14:29:49 2020...
 INFO: [Common 17-83] Releasing license: PlanAhead

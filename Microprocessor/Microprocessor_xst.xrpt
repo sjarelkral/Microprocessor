@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Mon Jun 15 21:46:32 2020">
+  <application stringID="Xst" timeStamp="Thu Jun 18 14:10:52 2020">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -47,13 +47,13 @@
         <item stringID="User_EnvOsname" value="Debian"/>
         <item stringID="User_EnvOsrelease" value="Debian GNU/Linux 10 (buster)"/>
       </item>
-      <item stringID="User_EnvHost" value="310-2-07"/>
+      <item stringID="User_EnvHost" value="310-2-08"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz"/>
-          <item stringID="speed" value="3261.259 MHz"/>
+          <item stringID="speed" value="3171.588 MHz"/>
         </row>
       </table>
     </section>
@@ -100,7 +100,7 @@
       <item DEFAULT="NO" label="-async_to_sync" stringID="XST_ASYNCTOSYNC" value="NO"/>
       <item DEFAULT="AUTO" label="-mult_style" stringID="XST_MULTSTYLE" value="Auto"/>
       <item DEFAULT="YES" label="-iobuf" stringID="XST_IOBUF" value="YES"/>
-      <item DEFAULT="500" label="-max_fanout" stringID="XST_MAXFANOUT" value="100000"/>
+      <item DEFAULT="500" label="-max_fanout" stringID="XST_MAXFANOUT" value="500"/>
       <item DEFAULT="24" label="-bufg" stringID="XST_BUFG" value="24"/>
       <item DEFAULT="YES" label="-register_duplication" stringID="XST_REGISTERDUPLICATION" value="YES"/>
       <item DEFAULT="NO" label="-register_balancing" stringID="XST_REGISTERBALANCING" value="No"/>

@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-310-2-07::  Mon Jun 15 22:29:35 2020
+310-2-08::  Thu Jun 18 14:29:59 2020
 
 par -w -intstyle ise -ol high -t 1 IMEM_map.ncd IMEM.ncd IMEM.pcf 
 
@@ -63,35 +63,35 @@ Total REAL time at the beginning of Placer: 0 secs
 Total CPU  time at the beginning of Placer: 0 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:cead9a2) REAL time: 1 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:ceb401d) REAL time: 1 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:cead9a2) REAL time: 1 secs 
+Phase 2.7  Design Feasibility Check (Checksum:ceb401d) REAL time: 1 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:cead9a2) REAL time: 1 secs 
+Phase 3.31  Local Placement Optimization (Checksum:ceb401d) REAL time: 1 secs 
 
 Phase 4.2  Initial Clock and IO Placement
-Phase 4.2  Initial Clock and IO Placement (Checksum:cead9a2) REAL time: 1 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:ceb401d) REAL time: 1 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:cead9a2) REAL time: 1 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:ceb401d) REAL time: 1 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:cead9a2) REAL time: 1 secs 
+Phase 6.36  Local Placement Optimization (Checksum:ceb401d) REAL time: 1 secs 
 
 Phase 7.8  Global Placement
 ..
-Phase 7.8  Global Placement (Checksum:17cee3f8) REAL time: 1 secs 
+Phase 7.8  Global Placement (Checksum:17d0098c) REAL time: 1 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:17cee3f8) REAL time: 1 secs 
+Phase 8.5  Local Placement Optimization (Checksum:17d0098c) REAL time: 1 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:17a669bb) REAL time: 1 secs 
+Phase 9.18  Placement Optimization (Checksum:17a6f9c1) REAL time: 1 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:17a669bb) REAL time: 1 secs 
+Phase 10.5  Local Placement Optimization (Checksum:17a6f9c1) REAL time: 1 secs 
 
 Total REAL time to Placer completion: 1 secs 
 Total CPU  time to Placer completion: 1 secs 
@@ -106,9 +106,9 @@ Phase  1  : 75 unrouted;      REAL time: 1 secs
 
 Phase  2  : 75 unrouted;      REAL time: 1 secs 
 
-Phase  3  : 22 unrouted;      REAL time: 1 secs 
+Phase  3  : 25 unrouted;      REAL time: 1 secs 
 
-Phase  4  : 22 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
+Phase  4  : 25 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 
 Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 

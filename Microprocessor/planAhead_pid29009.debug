@@ -1,20 +1,20 @@
 #-------------------------------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
-# Current time: 6/15/20 9:21:11 PM
-# Process ID: 5813
+# Current time: 6/18/20 2:23:43 PM
+# Process ID: 29009
 # Platform: Unix
 #
 # This file is an indication that an internal application error occurred.
 # This information is useful for debugging. Please open a case with Xilinx
 # Technical Support with this file and a testcase attached.
 #-------------------------------------------------------------------------------
-6/15/20 9:21:11 PM
+6/18/20 2:23:43 PM
 ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
-HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
-HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
 HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
 HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
 
 	at ui.h.e.CF(SourceFile:217)
 	at ui.h.I.CF(SourceFile:702)
