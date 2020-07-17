@@ -31,7 +31,7 @@ A Verilog implementation of a Simple Microprocessor programmed on an FPGA board.
 ## Modules and Code Structure
 * **Microprocessor** :
    * The ALU, control unit, system memory, frequency divider, pc and registers are condensed into a behavioural description of `Microprocessor` module. This module is responsible for all the external inputs and output and forms the core part of the project.
-   ``` verilog
+   ```verilog
    module Microprocessor(
     output clock,
     output mem_write,
